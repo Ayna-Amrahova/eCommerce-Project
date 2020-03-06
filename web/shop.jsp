@@ -10,7 +10,7 @@
     <hr>
     <input type="text" name="price" value="" id="productPrice"/> Price ($)
     <hr>
-    <input type="submit" name="submit" value="Add product" id="submit"/> 
+    <input type="submit" name="submit" value="" id="submit"/> Add product
 
 
 
@@ -90,14 +90,28 @@
         <div class ="row">
             <c:forEach items="${products}" var="products">
                 <div class="col-md-4" id="div1">
-
                     <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
                     <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}" />
                     <p id="p1"> <c:out value="${products.getName()}"/> </p>
                     <hr>
                     <p id="p2"> <strike id="strike1"> <c:out value="${products.getPrice()}"/> </strike> &nbsp ${products.getActualPrice()} </p>
                 </div>
+                <script>
+                    $("#${products.getId()}").click(
+                            function () {
+                                var productName = ${products.getName()};
+                                var productPrice = ${products.getActualPrice()}
+                                $("#productName").val(productName);
+                                $("#productPrice").val(productPrice);
+                                alert(${products.getId()} + ' clicked');
+                                alert(productName);
+                                alert('ad');
+                            }
+                    );
+
+                </script>
             </c:forEach>
+
         </div>
 
     </div>

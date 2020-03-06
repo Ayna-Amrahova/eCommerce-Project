@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.About;
 import model.Product;
 import model.ProductCategory;
 import model.SelectedProducts;
@@ -154,6 +155,24 @@ public class DB {
             System.out.println(ex.toString());
             return false;
 
+        }
+    }
+
+    public List<About> getAbout() {
+        try {
+            List<About> list = new ArrayList<>();
+            String sql;
+            sql = "select * from about";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                About about = new About(rs.getInt("id"), rs.getString("img_path"), rs.getString("paragraph"));
+                list.add(about);
+            }
+            return list;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return null;
         }
     }
 }

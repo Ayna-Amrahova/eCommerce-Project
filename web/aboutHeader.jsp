@@ -11,19 +11,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Shop</title>
+        <title>About</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="shop.css">
-        <script src="shop.js">
+        <link rel="stylesheet" href="about.css">
+        <script src="about.js">
         </script>
     </head>
     <body>
         <div class="header" id="header">
-            <p id="head">15% OFF ALL TENTS</p>
+            <p id="head">WE SHIP WORLDWIDE</p>
         </div>
         <div class="nav" id="nav">
             <img src="./img/logo.png" alt="logo" id="logo">

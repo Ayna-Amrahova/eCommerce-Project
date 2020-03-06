@@ -60,6 +60,10 @@
         <servlet-name>TentServletAsc</servlet-name>
         <servlet-class>servlet.TentServletAsc</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AboutServlet</servlet-name>
+        <servlet-class>servlet.AboutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servlet</servlet-name>
         <url-pattern>/servlet</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>TentServletAsc</servlet-name>
         <url-pattern>/TentServletAsc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AboutServlet</servlet-name>
+        <url-pattern>/AboutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
