@@ -16,7 +16,8 @@
                     <img src="${about.getImgPath()}" alt="foto" id="img${about.getId()}">
                 </c:otherwise>
             </c:choose>
-        </c:forEach>
+        </c:forEach> 
+                    
         <br>
     </div>
     <br><br><br><br><br>
