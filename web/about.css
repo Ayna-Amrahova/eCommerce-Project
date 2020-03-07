@@ -89,9 +89,10 @@
     margin: auto;
 }
 
+
 #p1{
     color: #350066;
-    margin-left: 60px;
+    margin-left: 30px;
     margin-top: 130px;
     font-size: 12px;
     font-family: sans-serif;
@@ -99,15 +100,15 @@
 }
 
 #img1{
-    margin-top: 80px;
-    margin-left: 300px;
+    margin-top: -200px;
+    margin-left: 550px;
 }
 
 #img2{
     width: 750px;
 }
 
-#div1{
+#div4{
     margin-top: 0px;
     margin-left: 45px;
     margin-right: -100px;
@@ -135,6 +136,7 @@
     font-family: sans-serif;
     text-align: center;
 }
+
 
 #footer{
     margin-top: 25px;
