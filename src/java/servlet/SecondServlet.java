@@ -5,14 +5,12 @@ import java.io.*;
 
 import java.util.*;
 
-import java.sql.*;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 
 import javax.servlet.http.*;
 import model.Product;
-import model.SelectedProducts;
 
 @WebServlet(urlPatterns = {"/SecondServlet"})
 

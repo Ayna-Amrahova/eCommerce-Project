@@ -10,7 +10,6 @@ import java.util.List;
 import model.About;
 import model.Product;
 import model.ProductCategory;
-import model.SelectedProducts;
 
 public class DB {
 
