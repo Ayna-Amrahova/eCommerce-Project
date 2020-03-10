@@ -24,22 +24,37 @@
     <body>
         <div class="header" id="header">
             <p id="head">WE SHIP WORLDWIDE</p>
-        </div>
-        <div class="nav" id="nav">
-            <img src="./img/logo.png" alt="logo" id="logo" onclick="openPage('http://localhost:8080/MatrixProject/HomeServlet')">
-            <p id="nav1"> HOME</p>
-            <p id="nav2" onclick="openPage('http://localhost:8080/MatrixProject/ShopServlet')"> SHOP</p>
-            <p id="nav3"> BLOG</p>
-            <p id="nav4"> ABOUT</p>
-            <p id="nav5"> CONTACT</p>
-            <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SecondServlet')">
-            <script type="text/javascript">
-                function openPage(pageURL)
-                {
-                    window.location.href = pageURL;
-                }
-            </script>
 
+            <div class="nav" id="nav">
+                <img src="./img/logo.png" alt="logo" id="logo" onclick="openPage('http://localhost:8080/MatrixProject/HomeServlet')">
+                <p id="nav1"> HOME</p>
+                <p id="nav2" onclick="openPage('http://localhost:8080/MatrixProject/ShopServlet')"> SHOP</p>
+                <p id="nav3"> BLOG</p>
+                <p id="nav4"> ABOUT</p>
+                <p id="nav5"> CONTACT</p>
+                <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SecondServlet')">
+                <script type="text/javascript">
+                    function openPage(pageURL)
+                    {
+                        window.location.href = pageURL;
+                    }
+
+                    window.onscroll = function () {
+                        myFunction();
+                    };
+
+                    var header = document.getElementById("header");
+                    var sticky = header.offsetTop;
+
+                    function myFunction() {
+                        if (window.pageYOffset > sticky) {
+                            header.classList.add("sticky");
+                        } else {
+                            header.classList.remove("sticky");
+                        }
+                    }
+                </script>
+            </div>
         </div>
         <br>
         <br>

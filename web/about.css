@@ -2,6 +2,12 @@
     background-color: #e6e6e6;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 #head{
     color: #e6002a;
     padding-top: 10px;

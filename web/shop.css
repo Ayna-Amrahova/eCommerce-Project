@@ -2,6 +2,16 @@
     background-color: #e6e6e6;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#addProduct{
+    margin-left: 750px;
+    background-color: skyblue;
+}
 
 #head{
     color: #e6002a;
@@ -364,7 +374,6 @@
 
 #shopby{
     color: #350066;
-    margin-bottom: 0px;
 }
 
 #shopBy{
