@@ -36,7 +36,5 @@
             </c:otherwise>
         </c:choose>
     </c:forEach> 
-    <br>
-    <br><br><br><br><br>
     <%@include file="footer.jsp" %>
     </html>

@@ -23,25 +23,27 @@
     </head>
     <body>
         <div class="header" id="header">
-            <p id="head">15% OFF ALL TENTS</p>
-        </div>
-        <div class="nav" id="nav">
-            <img src="./img/logo.png" alt="logo" id="logo">
-            <p id="nav1"> HOME</p>
-            <p id="nav2"> SHOP</p>
-            <p id="nav3"> BLOG</p>
-            <p id="nav4"> ABOUT</p>
-            <p id="nav5"> CONTACT</p>
-            <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SecondServlet')">
-            <script type="text/javascript">
-                function openPage(pageURL)
-                {
-                    window.location.href = pageURL;
-                }
-            </script>
 
+            <p id="head">15% OFF ALL TENTS</p>
+
+            <div class="nav" id="nav">
+                <img src="./img/logo.png" alt="logo" id="logo">
+                <p id="nav1"> HOME</p>
+                <p id="nav2"> SHOP</p>
+                <p id="nav3"> BLOG</p>
+                <p id="nav4"> ABOUT</p>
+                <p id="nav5"> CONTACT</p>
+                <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SecondServlet')">
+                <script type="text/javascript">
+                    function openPage(pageURL)
+                    {
+                        window.location.href = pageURL;
+                    }
+                </script>
+            </div>
         </div>
         <br>
         <br>
         <br>
+
 

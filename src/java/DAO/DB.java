@@ -127,14 +127,14 @@ public class DB {
         }
     }
 
-    public List<SelectedProducts> getSelectedProducts() {
+    public List<Product> getSelectedProducts() {
         try {
-            List<SelectedProducts> list = new ArrayList<>();
+            List<Product> list = new ArrayList<>();
             String sql = "select * from selected_products";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                SelectedProducts s = new SelectedProducts(rs.getInt("id"), rs.getString("name"), rs.getDouble("actual_price"));
+                Product s = new Product(rs.getInt("id"), rs.getString("name"), rs.getDouble("actual_price"));
                 list.add(s);
             }
             return list;

@@ -2,6 +2,7 @@
     background-color: #e6e6e6;
 }
 
+
 #head{
     color: #e6002a;
     padding-top: 10px;
@@ -119,15 +120,15 @@
     background-color: #404040;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-left: -100px;
-    margin-right: -100px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #pf11{
     color: white;
     padding-top: 50px;
     padding-bottom: 30px;
-    padding-left: 330px;
+    padding-left: 200px;
     font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
@@ -136,7 +137,7 @@
 
 #pf12{
     color: white;
-    padding-left: 310px;
+    padding-left: 200px;
     font-size: 11px;
     font-family: sans-serif;
     text-shadow: 2px 2px 4px grey;
@@ -144,7 +145,7 @@
 
 #pf13{
     color: white;
-    padding-left: 310px;
+    padding-left: 200px;
     font-size: 11px;
     font-family: sans-serif;
     text-shadow: 2px 2px 4px grey;
@@ -152,7 +153,7 @@
 
 #pf14{
     color: white;
-    padding-left: 325px;
+    padding-left: 200px;
     font-size: 11px;
     font-family: sans-serif;
     text-shadow: 2px 2px 4px grey;
@@ -160,7 +161,7 @@
 
 #pf15{
     color: white;
-    padding-left: 315px;
+    padding-left: 200px;
     font-size: 11px;
     font-family: sans-serif;
     padding-bottom: 50px;
@@ -355,7 +356,7 @@
 
 #pf61{
     color: #d9d9d9;
-    padding-left: 550px;
+    padding-left: 750px;
     font-size: 10px;
     font-family: sans-serif;
     text-shadow: 2px 2px 4px grey;
@@ -363,6 +364,7 @@
 
 #shopby{
     color: #350066;
+    margin-bottom: 0px;
 }
 
 #shopBy{
@@ -370,37 +372,10 @@
     font-family: sans-serif;
 }
 
-#collection{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: 13px;
-    font-family: sans-serif;
-}
-
-#all{
-    font-size: 13px;
+.categories{
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
-}
-
-#rainCoasts{
-    font-size: 12px;
-    font-family: sans-serif;
-}
-
-#bestSellers{
-    font-size: 12px;
-    font-family: sans-serif;
-}
-
-#sleepingBags{
-    font-size: 12px;
-    font-family: sans-serif;
-}
-
-#tentShop{
-    font-size: 12px;
-    font-family: sans-serif;
 }
 
 #p1{
@@ -439,61 +414,21 @@
     border-radius: 2px;
 }
 
-/*#div1{
-    padding-left: 40px;
-}*/
-
-#foreach{
-    padding-left: 300px;
-}
-
-#sortBy{
+#shopBysorting{
     color: #350066;
-    padding-left: 20px;
+    padding-left: 320px;
     font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
 }
 
-#arrow1{
-    width: 10px;
-    height: 10px;
-    margin-left: 45px;
-}
 
-
-
-/*#img1{
-    width: 400px;
-    height: 400px;
-    margin-left: 50px;
-}*/
 
 .img_prod{
     width: 90%;
     height: 70%;
-    
-}
-/*
-#img2{
-    width: 400px;
-    height: 400px;
-    margin-top: -850px;
-    margin-left: 600px;
-}
 
-#img3{
-    width: 400px;
-    height: 400px;
-    margin-left: 50px;
 }
-
-#img4{
-    width: 400px;
-    height: 400px;
-    margin-top: 850px;
-    margin-left: 800px;
-}*/
 
 #btn1{
     height: 30px;
@@ -585,3 +520,11 @@
     font-family: sans-serif;
     border-radius: 2px;
 }
+
+.addProduct {
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+}
+

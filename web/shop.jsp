@@ -1,122 +1,105 @@
 <%@include file="header.jsp" %>
 <div class="container">
 
-
     <div class="hr" id="hr1">
         <h3 class="hr-title" id="span1"> SHOP </h3>
     </div>
 
-    <input type="text" name="name" value="" id="productName"/> Product name
-    <hr>
-    <input type="text" name="price" value="" id="productPrice"/> Price ($)
-    <hr>
-    <input type="submit" name="submit" value="" id="submit"/> Add product
+    <div id="stick-here"></div>
+    <div  id="stickThis">
 
-
-
-    <div class="row" id="row1">
-        <div class="shopby" id="shopby">
-            <p id="shopBy">Shop by &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Sort by </p> 
-            <hr>
-            <div class="row" id="row3">
-                <label for="categories">Choose a category:</label>
-                &nbsp &nbsp &nbsp 
-                <select class="category">
-                    <c:forEach items="${category}" var="category">
-                        <div class="row" id="foreach">
-                            <div class = "col-md-4" id="foreach" >
-                                <option value="${category.getId()}"><c:out value="${category.getCategoryName()}"/></option>
-
-                                <script>
-                                    $(document).ready(function () {
-                                        $("select.category").change(function () {
-                                            var categoryId = $(this).children("option:selected").val();
-
-                                            $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?categoryId=' + categoryId);
-                                        });
-                                    });
-
-                                </script>
-
-                            </div>
-                        </div>
-                    </c:forEach>
-                </select>
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-                <hr>
-                <div class="row" id="row5">
-                    <label for="categories" id="shopBysorting">Choose a sorting:</label>
-                    &nbsp &nbsp &nbsp 
-                    <select class="sorting">
-                        <div class="row" id="foreach">
-                            <div class = "col-md-4" id="foreach" >
-                                <option value="asc" id="sorting"> From cheap to expensive </option>
-                                <option value="desc" id="sorting"> From expensive to cheap </option>
-                                <script>
-                                    $(document).ready(function () {
-                                        $("select.sorting").change(function () {
-                                            var sortBy = $(this).children("option:selected").val();
-                                            $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?sortBy=' + sortBy);
-                                        });
-
-                                        $("select.category").change(function () {
-                                            var categoryId = $(this).children("option:selected").val();
-                                            $("select.sorting").change(function () {
-                                                var sortBy = $(this).children("option:selected").val();
-                                                if (categoryId === null && sortBy === null) {
-                                                    $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet');
-                                                } else if (!(categoryId === null) && !(sortBy === null)) {
-                                                    $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?categoryId=' + categoryId + '&sortBy=' + sortBy);
-                                                }
-
-                                            });
-                                        });
-                                    });
-                                </script>
-
-                            </div>
-                        </div>
-                    </select>
-                </div>
-
-
-                <hr>
-            </div>
-
-            <hr>
-
-        </div>
-
-        <div class ="row">
-            <c:forEach items="${products}" var="products">
-                <div class="col-md-4" id="div1">
-                    <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
-                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}" />
-                    <p id="p1"> <c:out value="${products.getName()}"/> </p>
-                    <hr>
-                    <p id="p2"> <strike id="strike1"> <c:out value="${products.getPrice()}"/> </strike> &nbsp ${products.getActualPrice()} </p>
-                </div>
-                <script>
-                    $("#${products.getId()}").click(
-                            function () {
-                                var productName = ${products.getName()};
-                                var productPrice = ${products.getActualPrice()}
-                                $("#productName").val(productName);
-                                $("#productPrice").val(productPrice);
-                                alert(${products.getId()} + ' clicked');
-                                alert(productName);
-                                alert('ad');
-                            }
-                    );
-
-                </script>
-            </c:forEach>
-
-        </div>
+        <input type="text" name="name" value="" id="productName"/> Product name
+        <hr>
+        <input type="text" name="price" value="" id="productPrice"/> Price ($)
+        <hr>
+        <input type="submit" name="submit" value="Add product" id="submit"/> 
 
     </div>
+
+
     <br>
     <br>
     <br>
-    <br>
-    <%@include file="footer.jsp" %>
+    <div class="row" id="row5">
+        <label  id="shopBysorting">Choose a sorting:</label>
+        &nbsp &nbsp &nbsp 
+        <select class="sorting">
+            <div class="row" id="foreach">
+                <div class = "col-md-4" id="foreach" >
+                    <option selected="" id="sorting"> Select an option</option>
+                    <option value="asc"  id="sorting" > From cheap to expensive </option>
+                    <option value="desc" id="sorting"> From expensive to cheap </option>
+                    <script>
+                        $(document).ready(function () {
+                            $("select.sorting").change(function () {
+                                var sortBy = $(this).children("option:selected").val();
+                                
+                                $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?sortBy=' + sortBy);
+                            });
+
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" id="shopby">
+            <p id="shopBy">Shop by </p>
+            <hr>
+            <c:forEach items="${category}" var="category">
+                <ul class="categories"> 
+                    <li id="${category.getId()}"><c:out value="${category.getCategoryName()}"/></li>
+                </ul>
+                <script>
+                    $(document).ready(function () {
+                        $("#${category.getId()}").click(function () {
+                            var categoryId = $(this).attr("id");
+                            if (categoryId != 4) {
+                                $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?categoryId=' + categoryId);
+                            } else {
+                                $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet');
+                            }
+                        });
+                    });
+                </script>
+            </c:forEach>
+        </div>
+
+        <c:forEach items="${products}" var="products">
+
+            <div class="col-md-3" id="div1">
+                <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
+                <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}" />
+                <p id="p1"> <c:out value="${products.getName()}"/> </p>
+                <hr>
+                <p id="p2"> <strike id="strike1"> <c:out value="${products.getPrice()}"/> </strike> &nbsp ${products.getActualPrice()} </p>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <%-- <%! int var = 1;%>
+                 <% if (var % 4 == 0) { %>
+                 <br>
+                 <% } else { %>
+                 <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
+                 <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}" />
+                 <p id="p1"> <c:out value="${products.getName()}"/> </p>
+                 <hr>
+                 <p id="p2"> <strike id="strike1"> <c:out value="${products.getPrice()}"/> </strike> &nbsp ${products.getActualPrice()} </p>
+                     <%}%>
+                     <% var++;%>
+                --%>
+            </div>
+        </c:forEach>
+    </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<%@include file="footer.jsp" %>
