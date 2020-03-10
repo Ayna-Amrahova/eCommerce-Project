@@ -356,7 +356,7 @@
 
 #pf61{
     color: #d9d9d9;
-    padding-left: 750px;
+    padding-left: 600px;
     font-size: 10px;
     font-family: sans-serif;
     text-shadow: 2px 2px 4px grey;
@@ -373,7 +373,7 @@
 }
 
 .categories{
-    font-size: 12px;
+    font-size: 15px;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -416,17 +416,22 @@
 
 #shopBysorting{
     color: #350066;
-    padding-left: 320px;
-    font-size: 12px;
+    padding-left: 750px;
+    font-size: 16px;
     font-family: sans-serif;
     font-weight: bold;
 }
 
-
+#sorting{
+    color: #350066;
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
 
 .img_prod{
     width: 90%;
-    height: 70%;
+    height: 50%;
 
 }
 

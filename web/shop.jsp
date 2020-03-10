@@ -33,13 +33,10 @@
                         $(document).ready(function () {
                             $("select.sorting").change(function () {
                                 var sortBy = $(this).children("option:selected").val();
-                                
                                 $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?sortBy=' + sortBy);
                             });
-
                         });
                     </script>
-
                 </div>
             </div>
         </select>

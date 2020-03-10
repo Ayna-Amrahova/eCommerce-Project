@@ -26,9 +26,9 @@
             <p id="head">WE SHIP WORLDWIDE</p>
         </div>
         <div class="nav" id="nav">
-            <img src="./img/logo.png" alt="logo" id="logo">
+            <img src="./img/logo.png" alt="logo" id="logo" onclick="openPage('http://localhost:8080/MatrixProject/HomeServlet')">
             <p id="nav1"> HOME</p>
-            <p id="nav2"> SHOP</p>
+            <p id="nav2" onclick="openPage('http://localhost:8080/MatrixProject/ShopServlet')"> SHOP</p>
             <p id="nav3"> BLOG</p>
             <p id="nav4"> ABOUT</p>
             <p id="nav5"> CONTACT</p>
