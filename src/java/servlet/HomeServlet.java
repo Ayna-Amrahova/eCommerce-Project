@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Home;
+import model.HomeMiddle;
 
 public class HomeServlet extends HttpServlet {
 
@@ -18,6 +19,9 @@ public class HomeServlet extends HttpServlet {
         DB db = new DB();
         List<Home> home = db.getHome();
         request.setAttribute("home", home);
+
+        List<HomeMiddle> homeMiddle = db.getHomeMiddle();
+        request.setAttribute("homeMiddle", homeMiddle);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
         if (dispatcher != null) {

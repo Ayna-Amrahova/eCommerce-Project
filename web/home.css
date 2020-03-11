@@ -135,12 +135,29 @@
         padding-left: 450px;
         font-family: sans-serif;
     }
+    
+    #givingBack{
+        margin-top: 20px;
+        background-image: url("./img/fon_paragraf.png");
+    }
+    
+    #give{
+        margin-top: 50px;
+        margin-right: 50px;
+    }
 
+    #img4{
+        width: 45px;
+        height: 45px;
+        margin-left: 180px;
+    }
 
     #p4{
         padding-top: 15px;
+        padding-left: 75px;
         color: #350066;
-        margin-left: -550px;
+        margin-left: 50px;
+        margin-right: 50px;
         font-size: 12px;
         font-weight: bold;
         font-family: sans-serif;
@@ -149,64 +166,10 @@
     #p5{
         padding-top: 0px;
         color: #350066;
-        margin-left: -580px;
+        padding-left: 50px;
         font-size: 10px;
         font-family: sans-serif;
-    }
-
-    #img4{
-        margin-top: 110px;
-        margin-left: -500px;
-        height: 40px;
-        width: 45px;
-    }
-
-    #img5{
-        margin-top: 110px;
-        margin-left: -110px;
-        height: 40px;
-        width: 45px;
-    }
-
-    #p6{
-        padding-top: 165px;
-        color: #350066;
-        margin-left: -80px;
-        font-size: 12px;
-        font-weight: bold;
-        font-family: sans-serif;
-    }
-
-    #p7{
-        padding-top: 200px;
-        color: #350066;
-        margin-left: -160px;
-        font-size: 10px;
-        font-family: sans-serif;
-    }
-
-    #img6{
-        margin-top: 110px;
-        margin-left: 250px;
-        height: 40px;
-        width: 50px;
-    }
-
-    #p8{
-        padding-top: 165px;
-        color: #350066;
-        margin-left: -100px;
-        font-size: 12px;
-        font-weight: bold;
-        font-family: sans-serif;
-    }
-
-    #p9{
-        padding-top: 200px;
-        color: #350066;
-        margin-left: -190px;
-        font-size: 10px;
-        font-family: sans-serif;
+        text-align: center;
     }
 
     #btn5{
@@ -231,7 +194,8 @@
         font-size: 12px;
         font-family: sans-serif;
     }
-
+    
+    
     #span1 {
         margin-top: 80px;
         margin-bottom: 80px;

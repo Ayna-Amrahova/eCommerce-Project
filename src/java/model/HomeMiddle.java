@@ -1,31 +1,20 @@
 package model;
 
-public class Home {
+public class HomeMiddle {
 
     private int id;
     private String imgPath;
     private String header;
     private String paragraph;
-    private String btnInfo;
-    
 
-    public Home() {
+    public HomeMiddle() {
     }
 
-    public Home(int id, String imgPath, String header, String paragraph, String btnInfo) {
+    public HomeMiddle(int id, String imgPath, String header, String paragraph) {
         this.id = id;
         this.imgPath = imgPath;
         this.header = header;
         this.paragraph = paragraph;
-        this.btnInfo = btnInfo;
-    }
-
-    public String getBtnInfo() {
-        return btnInfo;
-    }
-
-    public void setBtnInfo(String btnInfo) {
-        this.btnInfo = btnInfo;
     }
 
     public int getId() {

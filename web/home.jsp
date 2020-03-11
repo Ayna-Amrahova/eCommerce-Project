@@ -24,28 +24,21 @@
         </div>
 
     </c:forEach>
-    <div class="row" id="div4">
+
+
+    <div class="row" id="givingBack">
         <h2 id="h22">GIVING BACK</h2>
-        <div class="class5">
-            <img src="./img/elka.png" alt="elka" id="img4">
-            <p id="p4">Our Paperless Headquarters</p>
-            <p id="p5"> I'm a paragraph. Click here to add your own text </br> and edit me. It's easy. Just click "Edit Text" or </br> double click me to add your own content and </br> make changes to the font</p>
+        <div class="row" id="give">
+            <c:forEach items="${homeMiddle}" var="homeMiddle" >
+                <div class="col-md-4" id="giving">
+                    <div class="row">
+                        <img src="${homeMiddle.getImgPath()}" alt="elka" id="img4">
+                        <p id="p4">${homeMiddle.getHeader()}</p>
+                        <p id="p5">${homeMiddle.getParagraph()} </p>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
-
-        <div class="row" id="div5">
-
-            <img src="./img/volni.png" alt="volni" id="img5">
-            <p id="p6">25 Rivers Cleaned Up</p>
-            <p id="p7"> I'm a paragraph. Click here to add your own text </br> and edit me. It's easy. Just click "Edit Text" or </br> double click me to add your own content and </br> make changes to the font</p>
-        </div>
-
-        <div class="row" id="div7">
-
-            <img src="./img/qori.png" alt="qori" id="img6">
-            <p id="p8">24 New Campaigns Launched</p>
-            <p id="p9"> I'm a paragraph. Click here to add your own text </br> and edit me. It's easy. Just click "Edit Text" or </br> double click me to add your own content and </br> make changes to the font</p>
-        </div>
-
         <button type="button" class="btn" name="button" id="btn5"> Read More </button>
         </br>
         </br>
