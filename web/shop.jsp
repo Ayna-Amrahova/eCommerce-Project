@@ -1,13 +1,11 @@
 <%@include file="shopHeader.jsp" %>
 <div class="container">
 
+
     <div class="hr" id="hr1">
         <h3 class="hr-title" id="span1"> SHOP </h3>
     </div>
 
-    <br>
-    <br>
-    <br>
     <div class="row" id="row5">
         <label  id="shopBysorting">Choose a sorting:</label>
         &nbsp &nbsp &nbsp 

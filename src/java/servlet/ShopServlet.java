@@ -95,10 +95,10 @@ public class ShopServlet extends HttpServlet {
         Cookie cookie1 = new Cookie(name, price);
 //        Cookie cookie2 = new Cookie("actualPrice", price);
 
-        cookie1.setPath("/Ajax-Task");
+        cookie1.setPath("/MatrixProject");
         response.addCookie(cookie1);
 //
-//        cookie2.setPath("/Ajax-Task");
+//        cookie2.setPath("/MatrixProject");
 //        response.addCookie(cookie2);
     }
 }

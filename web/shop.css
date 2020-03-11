@@ -3,17 +3,20 @@
 }
 
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 #addProduct{
-    margin-left: 850px;
-    background-image: url("./img/fon_paragraf.png");
+    background-color: aliceblue;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 200px;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    color:#350066;
 }
 
 #head{
@@ -107,7 +110,7 @@
     font-weight: bold;
     font-size: 12px;
     font-family: sans-serif;
-    color:#350066;
+    color: #350066;
 }
 
 #productPrice{
@@ -120,7 +123,7 @@
 #submit{
     height: 30px;
     width: 130px;
-    background-color: #350066;
+    background-color: skyblue;
 
 }
 

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.About;
+import model.Home;
 import model.Product;
 import model.ProductCategory;
 
@@ -174,4 +175,39 @@ public class DB {
             return null;
         }
     }
+
+    public boolean saveContact(String name, String email, String subject, String message) {
+        try {
+            ps = conn.prepareStatement("insert into contact(name, email, subject, message) values (?, ?, ?, ?)");
+            ps.setString(1, name);
+            ps.setString(2, email);
+            ps.setString(3, subject);
+            ps.setString(4, message);
+            ps.execute();
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return false;
+
+        }
+    }
+
+    public List<Home> getHome() {
+        try {
+            List<Home> list = new ArrayList<>();
+            String sql;
+            sql = "select * from home_header";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Home home = new Home(rs.getInt("id"), rs.getString("img_path"), rs.getString("header"), rs.getString("paragraph"), rs.getString("btn_info"));
+                list.add(home);
+            }
+            return list;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return null;
+        }
+    }
+
 }
