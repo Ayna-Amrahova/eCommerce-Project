@@ -1,36 +1,9 @@
-<%@include file="header.jsp" %>
+<%@include file="shopHeader.jsp" %>
 <div class="container">
 
     <div class="hr" id="hr1">
         <h3 class="hr-title" id="span1"> SHOP </h3>
     </div>
-
-    <div  id="addProduct">
-
-        <input type="text" name="name" value="" id="productName"/> Product name
-        <hr>
-        <input type="text" name="price" value="" id="productPrice"/> Price ($)
-        <hr>
-        <input type="submit" name="submit" value="Add product" id="submit"/> 
-
-        <script>
-            window.onscroll = function () {
-                myFunction();
-            };
-
-            var header = document.getElementById("addProduct");
-            var sticky = header.offsetTop;
-
-            function myFunction() {
-                if (window.pageYOffset > sticky) {
-                    header.classList.add("sticky");
-                } else {
-                    header.classList.remove("sticky");
-                }
-            }
-        </script>
-    </div>
-
 
     <br>
     <br>

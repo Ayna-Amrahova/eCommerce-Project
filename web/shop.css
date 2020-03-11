@@ -9,8 +9,11 @@
 }
 
 #addProduct{
-    margin-left: 750px;
-    background-color: skyblue;
+    margin-left: 850px;
+    background-image: url("./img/fon_paragraf.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
 }
 
 #head{
