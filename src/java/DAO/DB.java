@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.About;
 import model.Home;
+import model.HomeFooter;
 import model.HomeMiddle;
 import model.Product;
 import model.ProductCategory;
@@ -228,5 +229,24 @@ public class DB {
             return null;
         }
     }
+    
+      public List<HomeFooter> getHomeFooter() {
+        try {
+            List<HomeFooter> list = new ArrayList<>();
+            String sql;
+            sql = "select * from home_footer";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                HomeFooter home = new HomeFooter(rs.getInt("id"), rs.getString("img_path"));
+                list.add(home);
+            }
+            return list;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return null;
+        }
+    }
+
 
 }

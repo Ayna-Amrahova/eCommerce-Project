@@ -39,7 +39,7 @@
                 </div>
             </c:forEach>
         </div>
-        <button type="button" class="btn" name="button" id="btn5"> Read More </button>
+        <button type="button" class="btn" name="button" id="btn5" onclick="openPage('http://localhost:8080/MatrixProject/BlogServlet')"> Read More </button>
         </br>
         </br>
         </br>
@@ -53,67 +53,78 @@
 
     <!-- ////////////////////////////////////////////////////////////- -->
 
-    <p class="label info" id="info1">New Arrival</p>
-    <p class="label info" id="info2">Sale</p>
+    <div class="row">
+        <div class="slider-outer">
+            <img src="./img/left-arrow.jpg" class="prev" alt="Prev">
+            <div class="slider-inner">
+                <c:forEach items="${products}" var="product" >
+                    <div class="col-md-4">
+                        <p class="label info" id="info1"><c:out value="${product.getInfo()}"/></p>
+                        <img src="${product.getImgPath()}" class="active" alt="work1" id="work1_id">
+                        <p id="pp1"> <c:out value="${product.getName()}"/> </p>
+                        <hr>
+                        <p id="pp2"> <strike id="strike1"> <c:out value="${product.getPrice()}"/> </strike> &nbsp ${product.getActualPrice()} </p>
+                    </div>
 
-    </br>
-    <div class="row" id="div8">
-        <div class="class6" id="class6">
-
-            <span id="span2"> <img src="./img/kurtka.jpg" alt="kurtka" id="img7"> </span>
-            <p id="p10"> I'm a product </p>
-            <hr>
-            <p id="p11"> $85.00 </p>
+                </c:forEach>
+            </div>
+            <img src="./img/right-arrow.jpg" class="next" alt="Next">
         </div>
-        <!-- ////////////////////////////////////////////////////////////- -->
-        <pre>   </pre>
-        <div class="class7" id="div9">
-            <span id="span3"> <img src="./img/matras.jpg" alt="matras" id="img8"></span>
-            <p id="p12"> I'm a product </p>
-            <hr>
-            <p id="p13"> $45.00 </p>
-        </div>
-        <!-- ////////////////////////////////////////////////////////////- -->
-        <pre>   </pre>
-        <div class="class8" id="div10">
-
-            <span id="span4"> <img src="./img/palatka.jpg" alt="palatka" id="img9"> </span>
-            <p id="p14"> I'm a product </p>
-            <hr>
-
-            <p id="p15"> <strike id="strike1"> $120.00 </strike> &nbsp $102.00 </p>
-        </div>
-        <!-- ////////////////////////////////////////////////////////////- -->
-        <pre>   </pre>
-        <div class="class9" id="div11">
-            <span id="span5"> <img src="./img/sumka.jpg" alt="sumka" id="img10"></span>
-            <p id="p16"> I'm a product </p>
-            <hr>
-            <p id="p17"> $75.00 </p>
-        </div>
-        <button type="button" class="btn" name="button" id="btn6"> Shop All </button>
-
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.next').on('click', function () {
+                var currentImg = $('.active');
+                var nextImg = currentImg.next();
+
+                if (nextImg.length) {
+                    currentImg.removeClass('active').css('z-index', -10);
+                    nextImg.addClass('active').css('z-index', 10);
+                }
+            })
+        });
+
+        $(document).ready(function () {
+            $('.prev').on('click', function () {
+                var currentImg = $('.active');
+                var prevImg = currentImg.prev();
+
+                if (prevImg.length) {
+                    currentImg.removeClass('active').css('z-index', -10);
+                    prevImg.addClass('active').css('z-index', 10);
+                }
+            })
+        });
+    </script>
+
+    <button type="button" class="btn" name="button" id="btn6" onclick="openPage('http://localhost:8080/MatrixProject/ShopServlet')"> Shop All </button>
+
     <div class="hr" id="hr2">
         <p class="hr-title" id="span6">FOLLOW US #MADAGASCAR </p>
     </div>
 
     <div class="row" id="div12">
+
         <div class="class10">
-            <img src="./img/foto_1.jpg" alt="foto1" id="foto1">
+            <div class="row">
+                <c:forEach items="${homeFooter}" var="homeFooter" >
+                    <img src="${homeFooter.getImgPath()}" alt="" id="foto1">
+                </c:forEach>
+            </div>
         </div>
-        <div class="class11">
-            <img src="./img/foto_2.jpg" alt="foto2" id="foto2">
-        </div>
-        <div class="class12">
-            <img src="./img/foto_3.jpg" alt="foto3" id="foto3">
-        </div>
-        <div class="class13">
-            <img src="./img/foto_4.jpg" alt="foto4" id="foto4">
-        </div>
+
     </div>
     </br>
     </br>
     </br>
+    <script type="text/javascript">
+        function openPage(pageURL)
+        {
+            window.location.href = pageURL;
+        }
+    </script>
+
     <%@include file="footer.jsp" %>
+
 </html>
