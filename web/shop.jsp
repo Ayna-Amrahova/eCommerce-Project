@@ -1,4 +1,7 @@
 <%@include file="shopHeader.jsp" %>
+<link rel="stylesheet" href="shop.css">
+        <script src="shop.js">
+        </script>
 <div class="container">
 
 

@@ -1,0 +1,787 @@
+.header{
+  background-color: #e6e6e6;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#head{
+  color: #e6002a;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+.nav{
+  background-color: white;
+  box-shadow: 5px 5px 5px grey;
+  height: 50px;
+}
+#logo{
+  padding-left: 105px;
+  height: 50px;
+  width: 270px;
+}
+
+#nav{
+  background-color: white;
+}
+
+#nav1{
+  color: #d9d9d9;
+  padding-top: 15px;
+  padding-left: 670px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#nav2{
+  color: #d9d9d9;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#nav3{
+  color: #350066;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#nav4{
+  color: #d9d9d9;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#nav5{
+  color: #d9d9d9;
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#basket{
+  padding-top: 10px;
+  padding-left: 20px;
+  width: 50px;
+  height: 40px;
+}
+
+#span1 {
+      margin-top: 80px;
+      margin-bottom: 80px;
+      display: flex;
+      flex-direction: row;
+      color: #350066;
+      font-family: sans-serif;
+        }
+
+
+#span1:before, #span1:after {
+     content: "";
+     flex: 1 1;
+     border-bottom: 1px solid #d9d9d9;
+     margin: auto;
+}
+
+#footer{
+  margin-top: 25px;
+  background-color: #404040;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: -200px;
+  margin-right: -100px;
+}
+
+#pf11{
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 330px;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf12{
+  color: white;
+  padding-left: 310px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf13{
+  color: white;
+  padding-left: 310px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf14{
+  color: white;
+  padding-left: 325px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf15{
+  color: white;
+  padding-left: 315px;
+  font-size: 11px;
+  font-family: sans-serif;
+  padding-bottom: 50px;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf21{
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 120px;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf22{
+  color: white;
+  padding-left: 130px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf23{
+  color: white;
+  padding-left: 127px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf24{
+  color: white;
+  padding-left: 125px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf25{
+  color: white;
+  padding-left: 130px;
+  font-size: 11px;
+  font-family: sans-serif;
+  padding-bottom: 50px;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf31{
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 120px;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf32{
+  color: white;
+  padding-left: 125px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf33{
+  color: white;
+  padding-left: 95px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf34{
+  color: white;
+  padding-left: 115px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf35{
+  color: white;
+  padding-left: 100px;
+  font-size: 11px;
+  font-family: sans-serif;
+  padding-bottom: 50px;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf41{
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 120px;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf42{
+  color: white;
+  padding-left: 120px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf43{
+  color: white;
+  padding-left: 125px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf44{
+  color: white;
+  padding-left: 120px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf45{
+  color: white;
+  padding-left: 123px;
+  font-size: 11px;
+  font-family: sans-serif;
+  padding-bottom: 50px;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf51{
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 120px;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf52{
+  color: white;
+  padding-left: 100px;
+  font-size: 11px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#pf53{
+  color: white;
+  padding-left: 120px;
+  font-size: 15px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#input{
+  margin-left: 90px;
+}
+
+#btn7{
+  height: 30px;
+  width: 180px;
+  margin-left: 90px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  background-color: #e74350;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: sans-serif;
+  transition-duration: 0.4s;
+  border-radius: 2px;
+
+}
+
+#btn7:hover {
+  background-color: #80c1ff;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+#pf61{
+  color: #d9d9d9;
+  padding-left: 550px;
+  font-size: 10px;
+  font-family: sans-serif;
+  text-shadow: 2px 2px 4px grey;
+}
+
+#allPosts{
+  color: #e6002a;
+  padding-left: 200px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+#submit1{
+    width: 30px;
+    height: 30px;
+    margin-left: 500px;
+    border-color: #350066;
+}
+
+#search_icon{
+  width: 20px;
+  height: 20px;
+  margin-left: -3px;
+}
+
+#submit2{
+  width: 150px;
+  height: 30px;
+  margin-left: 30px;
+  border-color: #e6002a;
+}
+
+#login{
+  color: #e6002a;
+}
+
+
+
+#column1{
+
+}
+
+#blogFoto1{
+  width: 400px;
+  height: 300px;
+  margin-top: 50px;
+  margin-left: 180px;
+}
+
+#user{
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 200px;
+  border-radius: 100%;
+}
+
+#admin1{
+  color: #350066;
+  padding-top: 10px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#date1{
+  color: #350066;
+  padding-left: 240px;
+  margin-top: -40px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#spot{
+  color: #350066;
+  padding-left: 200px;
+  padding-top: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#text1{
+  color: #c0a5b9;
+  padding-left: 200px;
+  padding-top: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+#view1{
+  color: #350066;
+  padding-left: 200px;
+  padding-top: 10px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#heart1{
+  width: 20px;
+  height: 20px;
+  margin-left: -3px;
+}
+
+#submit3{
+    width: 30px;
+    height: 30px;
+    margin-left: 170px;
+    border-color: #e6002a;
+}
+
+
+
+
+#column2{
+}
+
+#content2{
+  padding-left: 30px;
+}
+
+#blogFoto2{
+  width: 500px;
+  height: 700px;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+#user2{
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 100%;
+}
+
+#admin2{
+  color: #350066;
+  padding-top: 10px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#date2{
+  color: #350066;
+  padding-left: 40px;
+  margin-top: -40px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#boots{
+  color: #350066;
+  padding-top: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#text2{
+  color: #c0a5b9;
+  padding-top: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+#view2{
+  color: #350066;
+  padding-top: 10px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#heart2{
+  width: 20px;
+  height: 20px;
+  margin-left: -3px;
+}
+
+#submit4{
+    width: 30px;
+    height: 30px;
+    margin-left: 300px;
+    border-color: #e6002a;
+}
+
+
+#column3{
+
+}
+
+#blogFoto3{
+  width: 400px;
+  height: 300px;
+  margin-top: 70px;
+  margin-left: 180px;
+}
+
+#user3{
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 200px;
+  border-radius: 100%;
+}
+
+#admin3{
+  color: #350066;
+  padding-top: 10px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#date3{
+  color: #350066;
+  padding-left: 240px;
+  margin-top: -40px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#himalaya{
+  color: #350066;
+  padding-left: 200px;
+  padding-top: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#text3{
+  color: #c0a5b9;
+  padding-left: 200px;
+  padding-top: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+#view3{
+  color: #350066;
+  padding-left: 200px;
+  padding-top: 10px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#heart3{
+  width: 20px;
+  height: 20px;
+  margin-left: -3px;
+}
+
+#submit5{
+    width: 30px;
+    height: 30px;
+    margin-left: 170px;
+    border-color: #e6002a;
+}
+
+#column4{
+  padding-top: 30px;
+}
+
+#content4{
+  padding-left: 620px;
+}
+
+#blogFoto4{
+  width: 500px;
+  height: 300px;
+  margin-top: -250px;
+  margin-left: 620px;
+}
+
+#user4{
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 100%;
+}
+
+#admin4{
+  color: #350066;
+  padding-top: 10px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#date4{
+  color: #350066;
+  padding-left: 40px;
+  margin-top: -40px;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+#train{
+  color: #350066;
+  padding-top: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#text4{
+  color: #c0a5b9;
+  padding-top: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+#view4{
+  color: #350066;
+  padding-top: 10px;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+#heart4{
+  width: 20px;
+  height: 20px;
+  margin-left: -3px;
+}
+
+#submit6{
+    width: 30px;
+    height: 30px;
+    margin-left: 300px;
+    border-color: #e6002a;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#login {
+  background-color: #350066;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#login:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.cancelbtn :hover {
+  opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}

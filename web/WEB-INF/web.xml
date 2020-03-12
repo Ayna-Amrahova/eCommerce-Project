@@ -72,6 +72,10 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>servlet.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Blog</servlet-name>
+        <servlet-class>servlet.BlogServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servlet</servlet-name>
         <url-pattern>/servlet</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/HomeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Blog</servlet-name>
+        <url-pattern>/Blog</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

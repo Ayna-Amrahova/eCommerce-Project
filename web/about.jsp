@@ -1,4 +1,7 @@
 <%@include file="aboutHeader.jsp" %>
+<link rel="stylesheet" href="about.css">
+<script src="about.js">
+</script>
 <div class="container">
     <div class="hr" id="hr1">
         <h3 class="hr-title" id="span1"> OUR STORY </h3>
@@ -29,7 +32,7 @@
                     <div class="row" id="div4">
                         <p id="p2"> GIVING BACK </p>
                         <div id="pp3">
-                        <p id="p3"> <c:out value="${about.getParagraph()}"/> </p>
+                            <p id="p3"> <c:out value="${about.getParagraph()}"/> </p>
                         </div>
                     </div>
                 </div>
