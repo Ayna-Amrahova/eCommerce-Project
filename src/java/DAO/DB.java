@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import model.About;
 import model.Home;
-import model.HomeFooter;
-import model.HomeMiddle;
 import model.Product;
 import model.ProductCategory;
 
@@ -198,7 +196,7 @@ public class DB {
         try {
             List<Home> list = new ArrayList<>();
             String sql;
-            sql = "select * from home_header";
+            sql = "select id, img_path, header, paragraph, btn_info from home";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -212,15 +210,15 @@ public class DB {
         }
     }
 
-    public List<HomeMiddle> getHomeMiddle() {
+    public List<Home> getHomeMiddle() {
         try {
-            List<HomeMiddle> list = new ArrayList<>();
+            List<Home> list = new ArrayList<>();
             String sql;
-            sql = "select * from home_middle";
+            sql = "select id, img_path2, header2, paragraph2 from home";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                HomeMiddle home = new HomeMiddle(rs.getInt("id"), rs.getString("img_path"), rs.getString("header"), rs.getString("paragraph"));
+                Home home = new Home(rs.getInt("id"), rs.getString("img_path2"), rs.getString("header2"), rs.getString("paragraph2"));
                 list.add(home);
             }
             return list;
@@ -230,15 +228,15 @@ public class DB {
         }
     }
     
-      public List<HomeFooter> getHomeFooter() {
+      public List<Home> getHomeFooter() {
         try {
-            List<HomeFooter> list = new ArrayList<>();
+            List<Home> list = new ArrayList<>();
             String sql;
-            sql = "select * from home_footer";
+            sql = "select id, img_path3 from home";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                HomeFooter home = new HomeFooter(rs.getInt("id"), rs.getString("img_path"));
+                Home home = new Home(rs.getInt("id"), rs.getString("img_path3"));
                 list.add(home);
             }
             return list;

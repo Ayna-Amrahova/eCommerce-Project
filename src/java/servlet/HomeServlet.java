@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Home;
-import model.HomeFooter;
-import model.HomeMiddle;
 import model.Product;
 
 public class HomeServlet extends HttpServlet {
@@ -19,18 +17,20 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String sortBy = request.getParameter("sortBy");
         DB db = new DB();
-        List<Home> home = db.getHome();
 
+        String sortBy = request.getParameter("sortBy");
         List<Product> products = db.getProducts(sortBy);
-        request.setAttribute("home", home);
+
         request.setAttribute("products", products);
 
-        List<HomeFooter> homeFooter = db.getHomeFooter();
+        List<Home> home = db.getHome();
+        request.setAttribute("home", home);
+
+        List<Home> homeFooter = db.getHomeFooter();
         request.setAttribute("homeFooter", homeFooter);
 
-        List<HomeMiddle> homeMiddle = db.getHomeMiddle();
+        List<Home> homeMiddle = db.getHomeMiddle();
         request.setAttribute("homeMiddle", homeMiddle);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");

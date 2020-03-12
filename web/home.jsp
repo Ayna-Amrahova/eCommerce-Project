@@ -32,9 +32,9 @@
             <c:forEach items="${homeMiddle}" var="homeMiddle" >
                 <div class="col-md-4" id="giving">
                     <div class="row">
-                        <img src="${homeMiddle.getImgPath()}" alt="elka" id="img4">
-                        <p id="p4">${homeMiddle.getHeader()}</p>
-                        <p id="p5">${homeMiddle.getParagraph()} </p>
+                        <img src="${homeMiddle.getImgPath2()}" alt="elka" id="img4">
+                        <p id="p4">${homeMiddle.getHeader2()}</p>
+                        <p id="p5">${homeMiddle.getParagraph2()} </p>
                     </div>
                 </div>
             </c:forEach>
@@ -109,7 +109,7 @@
         <div class="class10">
             <div class="row">
                 <c:forEach items="${homeFooter}" var="homeFooter" >
-                    <img src="${homeFooter.getImgPath()}" alt="" id="foto1">
+                    <img src="${homeFooter.getImgPath3()}" alt="" id="foto1">
                 </c:forEach>
             </div>
         </div>
