@@ -1,11 +1,13 @@
 .header{
     background-color: #e6e6e6;
+    z-index: 9999;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 9999;
 }
 
 #head{
@@ -443,7 +445,7 @@ input[type=text], input[type=password] {
 }
 
 img.avatar {
-    width: 40%;
+    width: 10%;
     border-radius: 50%;
 }
 

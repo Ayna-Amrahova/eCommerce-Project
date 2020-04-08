@@ -20,7 +20,12 @@
             <p id="p4">San Francisco, CA 94158 </p>
             <p id="p5">Tel: 123-456-7890 </p>
             <p id="p6">info@my-domain.com </p>
-            <a href="./img/karta_contact.jpg"> <p id="map"> View Map </p> </a>
+            <p id="map">
+                View Map
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50467.307610154305!2d-122.44189423283424!3d37.76175067159055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1583916632681!5m2!1sen!2s"
+                        width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </p>
+
         </div>
 
         <div class="class3" id="class3">
