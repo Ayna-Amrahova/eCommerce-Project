@@ -19,8 +19,7 @@ public class HomeServlet extends HttpServlet {
 
         DB db = new DB();
 
-        String sortBy = request.getParameter("sortBy");
-        List<Product> products = db.getProducts(sortBy);
+        List<Product> products = db.getProductsByCatId();
 
         request.setAttribute("products", products);
 

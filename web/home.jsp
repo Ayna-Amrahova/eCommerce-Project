@@ -53,50 +53,21 @@
 
     <!-- ////////////////////////////////////////////////////////////- -->
 
-    <div class="row">
-        <div class="slider-outer">
-            <img src="./img/left-arrow.jpg" class="prev" alt="Prev">
-            <div class="slider-inner">
+    <div class="row" id="div13">
+
+        <div class="row" >
                 <c:forEach items="${products}" var="product" >
-                    <div class="col-md-4">
-                        <p class="label info" id="info1"><c:out value="${product.getInfo()}"/></p>
-                        <img src="${product.getImgPath()}" class="active" alt="work1" id="work1_id">
-                        <p id="pp1"> <c:out value="${product.getName()}"/> </p>
-                        <hr>
-                        <p id="pp2"> <strike id="strike1"> <c:out value="${product.getPrice()}"/> </strike> &nbsp ${product.getActualPrice()} </p>
-                    </div>
+                    <p class="label info" id="info1"><c:out value="${product.getInfo()}"/></p>
+                    <img src="${product.getImgPath()}" alt="foto" id="work_id">
+                    <p id="pp1"> <c:out value="${product.getName()}"/> </p>
+                    <hr>
+                    <p id="pp2"> <strike id="strike1"> <c:out value="${product.getPrice()}"/> </strike> &nbsp ${product.getActualPrice()} </p>
 
                 </c:forEach>
-            </div>
-            <img src="./img/right-arrow.jpg" class="next" alt="Next">
+            
         </div>
+       
     </div>
-
-    <script>
-        $(document).ready(function () {
-            $('.next').on('click', function () {
-                var currentImg = $('.active');
-                var nextImg = currentImg.next();
-
-                if (nextImg.length) {
-                    currentImg.removeClass('active').css('z-index', -10);
-                    nextImg.addClass('active').css('z-index', 10);
-                }
-            })
-        });
-
-        $(document).ready(function () {
-            $('.prev').on('click', function () {
-                var currentImg = $('.active');
-                var prevImg = currentImg.prev();
-
-                if (prevImg.length) {
-                    currentImg.removeClass('active').css('z-index', -10);
-                    prevImg.addClass('active').css('z-index', 10);
-                }
-            })
-        });
-    </script>
 
     <button type="button" class="btn" name="button" id="btn6" onclick="openPage('http://localhost:8080/MatrixProject/ShopServlet')"> Shop All </button>
 

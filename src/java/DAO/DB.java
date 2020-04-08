@@ -102,6 +102,27 @@ public class DB {
         }
     }
 
+    public List<Product> getProductsByCatId() {
+        try {
+            List<Product> list = new ArrayList<>();
+            String sql;
+
+            sql = "select * from products where id=1||id=7||id=13";
+
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Product p = new Product(rs.getInt("id"), rs.getString("category_id"), rs.getString("name"),
+                        rs.getDouble("price"), rs.getDouble("actual_price"), rs.getString("info"), rs.getString("img_path"));
+                list.add(p);
+            }
+            return list;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return null;
+        }
+    }
+
     public ArrayList<Product> getAllProductByCategoryId(String categoryId, String sortBy) {
         ArrayList<Product> list = new ArrayList();
         String sql;
@@ -227,8 +248,8 @@ public class DB {
             return null;
         }
     }
-    
-      public List<Home> getHomeFooter() {
+
+    public List<Home> getHomeFooter() {
         try {
             List<Home> list = new ArrayList<>();
             String sql;
@@ -245,6 +266,5 @@ public class DB {
             return null;
         }
     }
-
 
 }

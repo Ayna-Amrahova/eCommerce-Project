@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="about.css">
 <script src="about.js">
 </script>
+<title> About </title>
 <div class="container">
     <div class="hr" id="hr1">
         <h3 class="hr-title" id="span1"> OUR STORY </h3>

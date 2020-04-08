@@ -8,9 +8,14 @@ public class Product {
     private double price;
     private double actualPrice;
     private String info;
-    private String imgPath; 
+    private String imgPath;
 
     public Product() {
+    }
+
+    public Product(int id, String imgPath) {
+        this.id = id;
+        this.imgPath = imgPath;
     }
 
     public Product(int id, String name, double actualPrice) {
@@ -18,8 +23,6 @@ public class Product {
         this.name = name;
         this.actualPrice = actualPrice;
     }
-    
-    
 
     public Product(int id, String categoryId, String name, double price, double actualPrice, String info, String imgPath) {
         this.id = id;
