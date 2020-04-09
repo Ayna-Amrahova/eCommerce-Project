@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="class19" id="footer6">
-                    <p id="pf61"> &copy2023 by Madagascar. Proudly created with Wix.com </p>
+                    <p id="pf61"> &copy2020 by Ayna Amrahova</p>
                 </div>
             </div>
 

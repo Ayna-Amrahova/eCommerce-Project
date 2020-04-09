@@ -18,7 +18,7 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
         <title> Shop </title>
-        
+
     </head>
     <body>
         <div class="header" id="header">
@@ -59,7 +59,8 @@
                         </div>
 
                         <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn" >Cancel</button>
+                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'"
+                                    class="cancelbtn" >Cancel</button>
                             <span class="psw">Forgot <a href="#">password?</a></span>
                         </div>
                     </form>
@@ -71,7 +72,7 @@
 
                     // When the user clicks anywhere outside of the modal, close it
                     window.onclick = function (event) {
-                        if (event.target == modal) {
+                        if (event.target === modal) {
                             modal.style.display = "none";
                         }
                     }
@@ -102,20 +103,5 @@
 
             </div>
         </div>
-        <br>
-        <br>
-        <br>
 
-
-
-
-        <div class="col-md-4" id="addProduct">
-
-            <input type="text" name="name" value="" id="productName"/> Product name
-
-            <input type="text" name="price" value="" id="productPrice"/> Price ($)
-            &nbsp &nbsp &nbsp &nbsp &nbsp
-            <input type="submit" name="submit" value="Add product" id="submit"/> 
-
-        </div>
 
