@@ -17,7 +17,7 @@
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-        
+
     </head>
     <body>
         <div class="header" id="header">
@@ -38,7 +38,7 @@
 
                 <div id="id01" class="modal">
 
-                    <form class="modal-content animate" action="/action_page.php" method="post">
+                    <form class="modal-content animate" action="/MatrixProject/HomeServlet" method="post">
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
                             <img src="./img/user.jpg" alt="Avatar" class="avatar">
@@ -50,6 +50,7 @@
 
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
+                            
 
                             <button type="submit" id="login">Login</button>
                             <label>
@@ -58,7 +59,10 @@
                         </div>
 
                         <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn" >Cancel</button>
+                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" 
+                                    class="cancelbtn" >Cancel</button>
+                            <button type="button" onclick="openPage('http://localhost:8080/MatrixProject/RegisterServlet')"
+                                    class="cancelbtn">Register</button>
                             <span class="psw">Forgot <a href="#">password?</a></span>
                         </div>
                     </form>

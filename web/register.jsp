@@ -17,6 +17,8 @@
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="shop.css">
+        <title> Register </title>
 
     </head>
     <body>
@@ -34,11 +36,10 @@
                 <p id="nav5" onclick="openPage('http://localhost:8080/MatrixProject/ContactServlet')"> CONTACT</p>
                 <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SecondServlet')">
 
-                <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" id="login">Login</button>
+              &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                <div id="id0" class="mdal">
 
-                <div id="id01" class="modal">
-
-                    <form class="modal-content animate" action="/HomeServlet" method="post">
+                    <form class="modal-content animate" action="/MatrixProject/HomeServlet" method="post">
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
                             <img src="./img/user.jpg" alt="Avatar" class="avatar">
@@ -51,18 +52,13 @@
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
 
-                            <button type="submit" id="login">Login</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
+                            <button type="submit" id="login">Register</button>
+
                         </div>
 
                         <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" 
+                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'"
                                     class="cancelbtn" >Cancel</button>
-                            <button type="button" onclick="openPage('http://localhost:8080/MatrixProject/RegisterServlet')"
-                                    class="cancelbtn">Register</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
                         </div>
                     </form>
                 </div>
@@ -73,7 +69,7 @@
 
                     // When the user clicks anywhere outside of the modal, close it
                     window.onclick = function (event) {
-                        if (event.target == modal) {
+                        if (event.target === modal) {
                             modal.style.display = "none";
                         }
                     }
@@ -104,8 +100,5 @@
 
             </div>
         </div>
-        <br>
-        <br>
-        <br>
 
 

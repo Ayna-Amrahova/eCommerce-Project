@@ -1,5 +1,8 @@
 package DAO;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,10 +10,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import model.About;
 import model.Home;
 import model.Product;
 import model.ProductCategory;
+import model.User;
 
 public class DB {
 
@@ -264,6 +269,46 @@ public class DB {
         } catch (Exception ex) {
             System.out.println(ex);
             return null;
+        }
+    }
+
+    public boolean saveUser(String username, String password) throws NoSuchAlgorithmException {
+        Scanner sc = new Scanner(System.in);
+        String value = sc.nextLine();
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] hashInBytes = md.digest(value.getBytes(StandardCharsets.UTF_8));
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hashInBytes) {
+            sb.append(String.format("%02x", b));
+        }
+        User user = new User();
+        user.setPassword(sb.toString());
+
+        try {
+            ps = conn.prepareCall("insert into user (username, password) values (?,?)");
+            ps.setString(1, username);
+            ps.setString(2, password);
+            return ps.execute();
+        } catch (SQLException e) {
+            System.out.println("Exception in saveUser: " + e);
+            return false;
+        }
+    }
+
+    public void checkLogin(String username, String password) {
+        try {
+            if (username != null && password != null) {
+                String sql = "select * from user where username='" + username + "' and password='" + password + "'";
+                ps = conn.prepareStatement(sql);
+                rs = ps.executeQuery(sql);
+                if (rs.next()) {
+                    System.out.println("Login succesfull!");
+                } else {
+                    System.out.println("Username or password is invalid!");
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("checkLogin: " + ex);
         }
     }
 
