@@ -41,9 +41,6 @@ public class RegisterServlet extends HttpServlet {
         String username = user.getUsername();
         String password = user.getPassword();
 
-        String u = request.getParameter("name");
-        String p = request.getParameter("price");
-
       
     }
 }
