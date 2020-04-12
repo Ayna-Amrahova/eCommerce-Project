@@ -32,7 +32,7 @@
             <c:forEach items="${homeMiddle}" var="homeMiddle" >
                 <div class="col-md-4" id="giving">
                     <div class="row">
-                        <img src="${homeMiddle.getImgPath2()}" alt="elka" id="img4">
+                        <img src="${homeMiddle.getImgPath2()}" alt="" id="img4">
                         <p id="p4">${homeMiddle.getHeader2()}</p>
                         <p id="p5">${homeMiddle.getParagraph2()} </p>
                     </div>

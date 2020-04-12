@@ -102,7 +102,7 @@
 
                 <div class="col-md-4" id="div1">
                     <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
-                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}" onclick="document.getElementById('id1').style.display = 'block'" style="width:auto;" id="login" />
+                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" onclick="document.getElementById('id1').style.display = 'block'"/>
                     <p id="p1"> <c:out value="${products.getName()}"/> </p>
                     <hr>
                     <p id="p2"> <strike id="strike1"> <c:out value="${products.getPrice()}"/> </strike> &nbsp ${products.getActualPrice()} </p>
