@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.About;
 import model.Home;
 import model.Product;
@@ -273,24 +275,23 @@ public class DB {
     }
 
     public boolean saveUser(String username, String password) throws NoSuchAlgorithmException {
-        Scanner sc = new Scanner(System.in);
-        String value = sc.nextLine();
+
         MessageDigest md = MessageDigest.getInstance("SHA-256");
-        byte[] hashInBytes = md.digest(value.getBytes(StandardCharsets.UTF_8));
+        byte[] hashInBytes = md.digest(password.getBytes(StandardCharsets.UTF_8));
         StringBuilder sb = new StringBuilder();
         for (byte b : hashInBytes) {
             sb.append(String.format("%02x", b));
         }
-        User user = new User();
-        user.setPassword(sb.toString());
+        password = sb.toString();
 
         try {
             ps = conn.prepareCall("insert into user (username, password) values (?,?)");
+
             ps.setString(1, username);
             ps.setString(2, password);
             return ps.execute();
-        } catch (SQLException e) {
-            System.out.println("Exception in saveUser: " + e);
+        } catch (SQLException ex) {
+            System.out.println("Save User: " + ex);
             return false;
         }
     }

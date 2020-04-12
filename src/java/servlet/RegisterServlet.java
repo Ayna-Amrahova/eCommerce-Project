@@ -2,20 +2,21 @@ package servlet;
 
 import DAO.DB;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.User;
 
 public class RegisterServlet extends HttpServlet {
-
-    DB db = new DB();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -25,8 +26,20 @@ public class RegisterServlet extends HttpServlet {
         if (dispatcher != null) {
             dispatcher.forward(request, response);
         }
-
-        db.close();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        System.out.println(username + "  ///  " + password);
+        DB db = new DB();
+        if (request.getParameter("username") != null && request.getParameter("password") != null) {
+            if (!(request.getParameter("username").equals("")) && !(request.getParameter("password").equals(""))) {
+                try {
+                    db.saveUser(username, password);
+                } catch (NoSuchAlgorithmException ex) {
+                    Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        db.checkLogin(username, password);
 
     }
 
@@ -37,10 +50,20 @@ public class RegisterServlet extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
 
-        User user = new User();
-        String username = user.getUsername();
-        String password = user.getPassword();
+        PrintWriter pw = response.getWriter();
 
-      
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        DB db = new DB();
+        if (request.getParameter("username") != null && request.getParameter("password") != null) {
+            if (!(request.getParameter("username").equals("")) && !(request.getParameter("password").equals(""))) {
+                try {
+                    db.saveUser(username, password);
+                } catch (NoSuchAlgorithmException ex) {
+                    Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        db.checkLogin(username, password);
     }
 }
