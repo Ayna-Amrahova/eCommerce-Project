@@ -170,27 +170,6 @@
   font-family: sans-serif;
 }
 
-#p11{
-  color: #350066;
-  padding-left: 70px;
-  font-size: 11px;
-  font-family: sans-serif;
-  font-weight: bold;
-}
-
-#p12{
-  color: #350066;
-  padding-left: 70px;
-  font-size: 10px;
-  font-family: sans-serif;
-}
-
-#p13{
-  color: #350066;
-  padding-left: 70px;
-  font-size: 10px;
-  font-family: sans-serif;
-}
 
 #map{
   outline: 2px black;
@@ -220,7 +199,7 @@
 }
 
 #input4{
-  margin-left: 750px;
+  margin-left: 500px;
   margin-top: 0px;
 }
 
@@ -247,8 +226,7 @@
 
 #p17{
   color: #350066;
-  margin-left: 750px;
-  margin-top: -262px;
+  margin-left: 500px;
   font-size: 11px;
   font-family: sans-serif;
 }
@@ -256,8 +234,7 @@
 #btn1{
   height: 30px;
   width: 60px;
-  margin-left: -60px;
-  margin-top: -190px;
+  margin-left: 500px;
   background-color: #e74350;
   color: white;
   font-weight: bold;

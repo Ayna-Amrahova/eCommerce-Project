@@ -204,22 +204,6 @@ public class DB {
         }
     }
 
-    public boolean saveContact(String name, String email, String subject, String message) {
-        try {
-            ps = conn.prepareStatement("insert into contact(name, email, subject, message) values (?, ?, ?, ?)");
-            ps.setString(1, name);
-            ps.setString(2, email);
-            ps.setString(3, subject);
-            ps.setString(4, message);
-            ps.execute();
-            return true;
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-            return false;
-
-        }
-    }
-
     public List<Home> getHome() {
         try {
             List<Home> list = new ArrayList<>();
@@ -313,4 +297,18 @@ public class DB {
         }
     }
 
+    public boolean saveContact(String name, String email, String subject, String message) {
+        try {
+            ps = conn.prepareStatement("insert into contact(name, email, subject, message) values (?, ?, ?, ?)");
+            ps.setString(1, name);
+            ps.setString(2, email);
+            ps.setString(3, subject);
+            ps.setString(4, message);
+            ps.execute();
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return false;
+        }
+    }
 }

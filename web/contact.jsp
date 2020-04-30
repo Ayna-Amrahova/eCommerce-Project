@@ -20,12 +20,13 @@
             <p id="p4">San Francisco, CA 94158 </p>
             <p id="p5">Tel: 123-456-7890 </p>
             <p id="p6">info@my-domain.com </p>
+            <br>
+            <br>
             <p id="map">
                 View Map
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50467.307610154305!2d-122.44189423283424!3d37.76175067159055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1583916632681!5m2!1sen!2s"
                         width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </p>
-
         </div>
 
         <div class="class3" id="class3">
@@ -35,36 +36,29 @@
             <p id="p9">Saturday: 8am - 10pm </p>
             <p id="p10">Sunday: 8am - 11pm </p>
         </div>
-
-        <div class="class4" id="class4">
-            <p id="p11"> Customer Service </p>
-            <br>
-            <p id="p12">info@my-domain.com </p>
-            <p id="p13">Tel: 123-456-7890 </p>
-        </div>
     </div>
 
-    <div class="row" id="inputs">
-        <div class="class5" id="class5">
-            <p id="p14">Enter your name:</p>
-            <input type="text" name="name" id="input1" placeholder="Name">
-            <p id="p15">Enter your email:</p>
-            <input type="email" name="email" id="input2" placeholder="Email">
-            <p id="p16">Enter your subject:</p>
-            <input type="text" name="subject" id="input3" placeholder="Subject">
-        </div>
-        <div class="class6" id="class6">
-            <p id="p17">Enter your message:</p>
-            <input type="text" name="message" id="input4" placeholder="Message">
-        </div>
-        <button type="button" class="btn" name="button" id="btn1"> Send </button>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-md-6" id="inputs">
+        <form action="/MatrixProject/ContactServlet" method="get">
+            <label for="name" id="p14"><b>Enter your name:</b></label>
+            <input type="text" name="name" id="input1" placeholder="Name" required>
+            <label for="name" id="p15"><b>Enter your email:</b></label>
+            <input type="email" name="email" id="input2" placeholder="Email" required>
+            <label for="name" id="p16"><b>Enter your subject:</b></label>
+            <input type="text" name="subject" id="input3" placeholder="Subject" required>
+            <label for="name" id="p17"><b>Enter your message:</b></label>
+            <input type="text" name="message" id="input4" placeholder="Message" required>
+            <button type="submit" class="btn" name="button" id="btn1"> Send </button>
+        </form>
     </div>
 
     <div class="hr" id="hr2">
         <h3 class="hr-title" id="span2"> STOCKISTS </h3>
     </div>
-
-
     <div class="row" >
         <div class="class7" id="class7">
             <p id="p18"> EUROPE </p>

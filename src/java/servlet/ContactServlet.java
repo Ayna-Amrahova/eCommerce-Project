@@ -3,10 +3,13 @@ package servlet;
 import DAO.DB;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,6 +29,25 @@ public class ContactServlet extends HttpServlet {
         if (dispatcher != null) {
             dispatcher.forward(request, response);
         }
+
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String subject = request.getParameter("subject");
+        String message = request.getParameter("message");
+        System.out.println(name + "  ///  " + email + "  ///  " + subject + "  ///  " + message);
+        DB db = new DB();
+        if (request.getParameter("name") != null && request.getParameter("email") != null
+                && request.getParameter("subject") != null && request.getParameter("message") != null) {
+            if (!(request.getParameter("name").equals("")) && !(request.getParameter("email").equals(""))
+                    && !(request.getParameter("subject").equals("")) && !(request.getParameter("message").equals(""))) {
+                try {
+                    db.saveContact(name, email, subject, message);
+                } catch (Exception ex) {
+                    System.out.println(ex.toString());
+                }
+            }
+        }
+
     }
 
     @Override
@@ -41,20 +63,20 @@ public class ContactServlet extends HttpServlet {
         String email = request.getParameter("email");
         String subject = request.getParameter("subject");
         String message = request.getParameter("message");
-
-        System.out.println(name);
-        System.out.println(email);
-        System.out.println(subject);
-        System.out.println(message);
-
-        if (name.equals("") && email.equals("") && subject.equals("") && message.equals("")) {
-            pw.print("{\"error\" : \"false\"}");
-        } else {
-            pw.print("{\"success\" : \"true\"}");
-        }
-
+        System.out.println(name + "  ///  " + email + "  ///  " + subject + "  ///  " + message);
         DB db = new DB();
-        db.saveContact(name, email, subject, message);
+        if (request.getParameter("name") != null && request.getParameter("email") != null
+                && request.getParameter("subject") != null && request.getParameter("message") != null) {
+            if (!(request.getParameter("name").equals("")) && !(request.getParameter("email").equals(""))
+                    && !(request.getParameter("subject").equals("")) && !(request.getParameter("message").equals(""))) {
+                try {
+                    db.saveContact(name, email, subject, message);
+                } catch (Exception ex) {
+                    System.out.println(ex.toString());
+                }
+            }
+        }
+         System.out.println(name + "  ///  " + email + "  ///  " + subject + "  ///  " + message);
 
     }
 }
