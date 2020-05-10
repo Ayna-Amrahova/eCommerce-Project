@@ -8,19 +8,6 @@
         <h3 class="hr-title" id="span1"> BLOG </h3>
     </div>
 
-    <div class="row" id="row1">
-        <div class="allposts">
-            <p id="allPosts"> All Posts </p>
-        </div>
-        <div class="searchicon">
-            <button type="submit" id="submit1" > <img src="./img/search.png" alt="search_icon" id="search_icon"> </button>
-        </div>
-        
-       
-
-        
-    </div>
-
 
     <div class="row" id="rows">
         <div class="column1" id="column1">
@@ -32,7 +19,7 @@
                 <p id="text1"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
                     continue reading. Welcome to your blog post. Use this... </p>
                 <hr>
-                <p id="view1"> 23 views &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Write a comment
+                <p id="view1">Write a comment
                     <button type="submit" id="submit3" > <img src="./img/heart.jpg" alt="heart" id="heart1"> </button> </p>
             </div>
 
@@ -45,7 +32,7 @@
                     <p id="text3"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
                         continue reading. Welcome to your blog post. Use this... </p>
                     <hr>
-                    <p id="view3"> 9 views &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Write a comment
+                    <p id="view3">  Write a comment
                         <button type="submit" id="submit5" > <img src="./img/heart.jpg" alt="heart" id="heart3"> </button> </p>
                 </div>
             </div>
@@ -61,7 +48,7 @@
                 <p id="text2"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
                     continue reading. Welcome to your blog post. Use this... </p>
                 <hr>
-                <p id="view2"> 17 views &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Write a comment
+                <p id="view2">  Write a comment
                     <button type="submit" id="submit4" > <img src="./img/heart.jpg" alt="heart" id="heart2"> </button> </p>
 
             </div>
@@ -76,7 +63,7 @@
                 <p id="text4"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
                     continue reading. Welcome to your blog post. Use this... </p>
                 <hr>
-                <p id="view4"> 13 views &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Write a comment
+                <p id="view4">  Write a comment
                     <button type="submit" id="submit6" > <img src="./img/heart.jpg" alt="heart" id="heart4"> </button> </p>
             </div>
         </div>

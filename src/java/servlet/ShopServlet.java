@@ -59,40 +59,35 @@ public class ShopServlet extends HttpServlet {
 
         PrintWriter pw = response.getWriter();
 
-        String name = request.getParameter("name");
-        String price = request.getParameter("price");
-        double actualPrice = Double.valueOf(price);
-        System.out.println(name);
+        String prod_name = request.getParameter("prod_name");
+        String prod_price = request.getParameter("prod_price");
+        double actualPrice = Double.valueOf(prod_price);
+        System.out.println(prod_name + "-------name");
+        System.out.println(prod_price + "-------price");
 
-        System.out.println(price);
+        DB db = new DB();
+        db.saveProducts(prod_name, actualPrice);
+//        PreparedStatement ps;
+//        try {
+//            String connectionURL = "jdbc:mysql://localhost:3306/travel_and_shop?useEncoding=true&characterEncoding-UTF8", username, password;
+//
+//            Connection connection = null;
+//            ResultSet rs;
+//            Class.forName("com.mysql.jdbc.Driver");
+//            connection = DriverManager.getConnection(connectionURL, "root", "123456");
+//
+//            ps = connection.prepareStatement("insert into selected_products(name, actual_price) values (?, ?)");
+//            ps.setString(1, prod_name);
+//            ps.setDouble(2, actualPrice);
+//            ps.execute();
+//            rs = ps.getResultSet();
+//
+//        } catch (Exception ex) {
+//            System.out.println(ex.toString());
+//
+//        }
 
-        if (name.equals("") && price.equals("")) {
-            pw.print("{\"error\" : \"false\"}");
-        } else {
-            pw.print("{\"success\" : \"true\"}");
-        }
-
-        PreparedStatement ps;
-        try {
-            String connectionURL = "jdbc:mysql://localhost:3306/travel_and_shop?useEncoding=true&characterEncoding-UTF8", username, password;
-
-            Connection connection = null;
-            ResultSet rs;
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(connectionURL, "root", "123456");
-
-            ps = connection.prepareStatement("insert into selected_products(name, actual_price) values (?, ?)");
-            ps.setString(1, name);
-            ps.setDouble(2, actualPrice);
-            ps.execute();
-            rs = ps.getResultSet();
-
-        } catch (Exception ex) {
-            System.out.println(ex.toString());
-
-        }
-
-        Cookie cookie1 = new Cookie(name, price);
+        Cookie cookie1 = new Cookie(prod_name, prod_price);
 //        Cookie cookie2 = new Cookie("actualPrice", price);
 
         cookie1.setPath("/MatrixProject");

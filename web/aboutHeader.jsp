@@ -10,8 +10,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -50,7 +52,7 @@
 
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="password" required>
-                            
+
 
                             <button type="submit" id="login">Login</button>
                             <label>
@@ -102,7 +104,11 @@
                     }
                 </script>
 
-
+                <script>
+                    AOS.init({
+                        duration: 1200,
+                    })
+                </script>
             </div>
         </div>
         <br>

@@ -1,4 +1,6 @@
 <%@include file="shopHeader.jsp" %>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link rel="stylesheet" href="shop.css">
 <script src="shop.js">
 </script>
@@ -45,9 +47,6 @@
 <div class="container">
 
 
-    <div class="hr" id="hr1">
-        <h3 class="hr-title" id="span1"> SHOP </h3>
-    </div>
 
     <div class="row" id="row5">
         <label  id="shopBysorting">Choose a sorting:</label>
@@ -95,18 +94,25 @@
             </script>
         </c:forEach>
     </div>
-
     <div class="content" id="">
-        <div class="row">
+        <div class="row" >
+
+
             <c:forEach items="${products}" var="products">
 
-                <div class="col-md-4" id="div1">
+                <div class="col-md-4" id="div1" data-aos="zoom-in-up"
+                     data-aos-duration="3000" >
                     <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
-                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" onclick="document.getElementById('id1').style.display = 'block'"/>
-                    <p id="p1"> <c:out value="${products.getName()}"/> </p>
+                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}" onclick="document.getElementById('id1').style.display = 'block'"/>
+                    <p id="name_${products.getId()}" class="p1"> <c:out value="${products.getName()}"/> </p>
                     <hr>
-                    <p id="p2"> <strike id="strike1"> <c:out value="${products.getPrice()}"/> </strike> &nbsp ${products.getActualPrice()} </p>
-
+                    <p id="p2" class="p2"> <strike id="strike1"> 
+                        <c:out value="${products.getPrice()}"/> 
+                    </strike> &nbsp
+                    <span id="price_${products.getId()}">
+                        ${products.getActualPrice()} 
+                    </span>
+                    </p>
                     <br>
                     <br>
                 </div>
@@ -118,4 +124,26 @@
 <br>
 <br>
 <br>
+
+<script>
+    $(document).ready(
+            funtion(){
+    $(".img_prod").click(
+            function(){
+            var id = $(this).attr("id");
+                    var prod_name = $.trim($("#name_" + id).html());
+                    var prod_price = $.trim($("#price_" + id).html());
+                    $(#"productName").val(prod_name);
+                    $(#"productPrice").val(prod_price);
+            }
+    );
+    }
+    );
+
+
+</script>
+<script>
+    AOS.init();
+</script>
+
 <%@include file="footer.jsp" %>

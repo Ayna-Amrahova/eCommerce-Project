@@ -1,17 +1,17 @@
 <title>Contact</title>
 <link rel="stylesheet" href="contact.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="contact.js">
 </script>
 <%@include file="header.jsp" %>
 
 <div class="container">
-    <div class="hr" id="hr1">
-        <h3 class="hr-title" id="span1"> CONTACT </h3>
-    </div>
 
-    <div class="row" >
-        <div class="class1" id="class1">
-            <p id="p1"> VISIT US </p>
+    <div class="row" data-aos="fade-up"
+             data-aos-duration="3000"  >
+        <div class="class1" id="class1" >
+            <p id="p1" > VISIT US </p>
         </div>
         <div class="class2" id="class2">
             <p id="p2"> Our Store </p>
@@ -41,25 +41,59 @@
     <br>
     <br>
     <br>
+    <div class="hr" id="hr1" data-aos="zoom-out-up"
+             data-aos-duration="3000" >
+        <h3 class="hr-title" id="span1"> CONTACT US</h3>
+    </div>
+    <p class="" id="span179" data-aos="zoom-in-up"
+             data-aos-duration="3000"> Swing by for a cup of coffee, or leave us a message</p>
+    <div id="div1" class="fa" data-aos="zoom-in-up"
+             data-aos-duration="3000"></div>
 
+    <script>
+        function hand() {
+            var a;
+            a = document.getElementById("div1");
+            a.innerHTML = "&#xf25a;";
+            setTimeout(function () {
+                a.innerHTML = "&#xf256;";
+            }, 500);
+            setTimeout(function () {
+                a.innerHTML = "&#xf259;";
+            }, 1000);
+            setTimeout(function () {
+                a.innerHTML = "&#xf256;";
+            }, 1500);
+        }
+        hand();
+        setInterval(hand, 2000);
+    </script>
     <div class="col-md-6" id="inputs">
         <form action="/MatrixProject/ContactServlet" method="get">
-            <label for="name" id="p14"><b>Enter your name:</b></label>
-            <input type="text" name="name" id="input1" placeholder="Name" required>
-            <label for="name" id="p15"><b>Enter your email:</b></label>
-            <input type="email" name="email" id="input2" placeholder="Email" required>
-            <label for="name" id="p16"><b>Enter your subject:</b></label>
-            <input type="text" name="subject" id="input3" placeholder="Subject" required>
-            <label for="name" id="p17"><b>Enter your message:</b></label>
-            <input type="text" name="message" id="input4" placeholder="Message" required>
-            <button type="submit" class="btn" name="button" id="btn1"> Send </button>
+            <input type="text" name="name" id="input1" placeholder="Name" required 
+                   data-aos="zoom-out-left"
+             data-aos-duration="1500">
+            <input type="text" name="email" id="input2" placeholder="Email" required
+                   data-aos="zoom-out-right"
+             data-aos-duration="1500">
+            <input type="text" name="subject" id="input3" placeholder="Subject" required
+                   data-aos="zoom-out-left"
+             data-aos-duration="1500">
+            <input type="text" name="message" id="input4" placeholder="Message" required
+                   data-aos="zoom-out-right"
+             data-aos-duration="1500">
+            <button type="submit" class="btn" name="button" id="btn1"
+                    data-aos="zoom-out-left"
+             data-aos-duration="3000"> Send </button>
         </form>
     </div>
 
-    <div class="hr" id="hr2">
+    <div class="hr" id="hr2" data-aos="fade-up"
+             data-aos-duration="3000">
         <h3 class="hr-title" id="span2"> STOCKISTS </h3>
     </div>
-    <div class="row" >
+    <div class="row" data-aos="fade-up"
+             data-aos-duration="3000">
         <div class="class7" id="class7">
             <p id="p18"> EUROPE </p>
         </div>
@@ -84,7 +118,8 @@
     </div>
 
 
-    <div class="row" >
+    <div class="row" data-aos="fade-up"
+             data-aos-duration="3000" >
         <div class="class10" id="class10">
             <p id="p29"> NORTH AMERICA </p>
         </div>
@@ -109,7 +144,8 @@
     </div>
 
 
-    <div class="row" >
+    <div class="row" data-aos="fade-up"
+             data-aos-duration="3000">
         <div class="class13" id="class13">
             <p id="p40"> ASIA </p>
         </div>
@@ -140,4 +176,7 @@
     </p>
 
     <%@include file="footer.jsp" %>
+    <script>
+        AOS.init();
+    </script>
 </html>
