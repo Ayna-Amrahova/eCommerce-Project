@@ -6,6 +6,8 @@ import java.io.*;
 import java.util.*;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -21,16 +23,19 @@ public class ShopServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
 //        Cookie[] cookies = request.getCookies();
 //        for (Cookie cookie : cookies) {
 //            System.out.println(cookie.getName());
 //            System.out.println(cookie.getValue());
 //        }
-
         String sortBy = request.getParameter("sortBy");
         String categoryId = request.getParameter("categoryId");
-
+        String prod_name = request.getParameter("productName");
+        String prod_price = request.getParameter("productPrice");
+//        double actualPrice = Double.valueOf(prod_price);
+        System.out.println(prod_name + "-------name");
+        System.out.println(prod_price + "-------price");
         DB db = new DB();
         List<ProductCategory> category = db.getProductCategories();
         List<Product> products;
@@ -44,9 +49,22 @@ public class ShopServlet extends HttpServlet {
         request.setAttribute("products", products);
         request.setAttribute("category", category);
         RequestDispatcher dispatcher = request.getRequestDispatcher("shop.jsp");
+
         if (dispatcher != null) {
             dispatcher.forward(request, response);
         }
+
+        String msg = request.getParameter("msg");
+        if (request.getParameter("msg") != null) {
+            if (!(request.getParameter("msg").equals(" "))) {
+                try {
+                    db.saveChat(msg);
+                } catch (Exception ex) {
+                    Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+
         db.close();
     }
 
@@ -59,14 +77,14 @@ public class ShopServlet extends HttpServlet {
 
         PrintWriter pw = response.getWriter();
 
-        String prod_name = request.getParameter("prod_name");
-        String prod_price = request.getParameter("prod_price");
-        double actualPrice = Double.valueOf(prod_price);
+        String prod_name = request.getParameter("productName");
+        String prod_price = request.getParameter("productPrice");
+//        double actualPrice = Double.valueOf(prod_price);
         System.out.println(prod_name + "-------name");
         System.out.println(prod_price + "-------price");
 
         DB db = new DB();
-        db.saveProducts(prod_name, actualPrice);
+//        db.saveProducts(prod_name, actualPrice);
 //        PreparedStatement ps;
 //        try {
 //            String connectionURL = "jdbc:mysql://localhost:3306/travel_and_shop?useEncoding=true&characterEncoding-UTF8", username, password;
@@ -86,14 +104,5 @@ public class ShopServlet extends HttpServlet {
 //            System.out.println(ex.toString());
 //
 //        }
-
-        Cookie cookie1 = new Cookie(prod_name, prod_price);
-//        Cookie cookie2 = new Cookie("actualPrice", price);
-
-        cookie1.setPath("/MatrixProject");
-        response.addCookie(cookie1);
-//
-//        cookie2.setPath("/MatrixProject");
-//        response.addCookie(cookie2);
     }
 }

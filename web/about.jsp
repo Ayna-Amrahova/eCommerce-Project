@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="row" id="div4"  data-aos="fade-left"
-                             data-aos-duration="3000">
+                         data-aos-duration="3000">
                         <p id="p2"> GIVING BACK </p>
                         <div id="pp3" >
                             <p id="p3"> <c:out value="${about.getParagraph()}"/> </p>
@@ -49,10 +49,27 @@
         </c:choose>
     </c:forEach> 
 
+
+    <button class="open-button" onclick="openForm()">Send your message</button>
+    <div class="chat-popup" id="myForm">
+        <form action="" class="form-container">
+            <textarea placeholder="Type message..." name="msg" required></textarea>
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
     <script>
-        AOS.init({
-            duration: 1200,
-        })
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+    <script>
+        AOS.init();
     </script>
     <%@include file="footer.jsp" %>
 </html>

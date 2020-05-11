@@ -28,20 +28,6 @@
 </div>
 
 
-<script>
-
-
-    // Get the modal
-    var odal = document.getElementById('id1');
-
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target === odal) {
-            odal.style.display = "none";
-        }
-    }
-</script>
 
 
 <div class="container">
@@ -126,21 +112,45 @@
 <br>
 
 <script>
-    $(document).ready(
-            funtion(){
+
     $(".img_prod").click(
-            function(){
-            var id = $(this).attr("id");
-                    var prod_name = $.trim($("#name_" + id).html());
-                    var prod_price = $.trim($("#price_" + id).html());
-                    $(#"productName").val(prod_name);
-                    $(#"productPrice").val(prod_price);
+            function () {
+                var id = $(this).attr("id");
+                var prod_name = $.trim($("#name_" + id).html());
+                var prod_price = $.trim($("#price_" + id).html());
+                        $(#"productName").val(prod_name);
+                        $(#"productPrice").val(prod_price);
             }
     );
+
+    // Get the modal
+    var odal = document.getElementById('id1');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === odal) {
+            odal.style.display = "none";
+        }
     }
-    );
+</script>
 
+<button class="open-button" onclick="openForm()">Send your message</button>
+<div class="chat-popup" id="myForm">
+    <form action="" class="form-container">
+        <textarea placeholder="Type message..." name="msg" required></textarea>
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+</div>
 
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
 </script>
 <script>
     AOS.init();

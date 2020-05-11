@@ -10,14 +10,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.About;
+import model.Blog;
 import model.Home;
 import model.Product;
 import model.ProductCategory;
-import model.User;
 
 public class DB {
 
@@ -309,6 +306,36 @@ public class DB {
         } catch (Exception ex) {
             System.out.println(ex.toString());
             return false;
+        }
+    }
+
+    public boolean saveChat(String msg) {
+        try {
+            ps = conn.prepareStatement("insert into chat(message) values (?)");
+            ps.setString(1, msg);
+            ps.execute();
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return false;
+        }
+    }
+
+    public List<Blog> getBlog() {
+        try {
+            List<Blog> list = new ArrayList<>();
+            String sql;
+            sql = "select id, img_path, header, text, btn_info, like_img from blog";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Blog blog = new Blog(rs.getInt("id"), rs.getString("img_path"), rs.getString("header"), rs.getString("text"), rs.getString("btn_info"), rs.getString("like_img"));
+                list.add(blog);
+            }
+            return list;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return null;
         }
     }
 }

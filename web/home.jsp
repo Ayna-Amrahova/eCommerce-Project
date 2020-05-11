@@ -29,7 +29,7 @@
 
 
     <div class="row" id="givingBack" data-aos="zoom-in"
-             data-aos-duration="3000">
+         data-aos-duration="3000">
         <h2 id="h22">GIVING BACK</h2>
         <div class="row" id="give">
             <c:forEach items="${homeMiddle}" var="homeMiddle" >
@@ -51,14 +51,14 @@
 
     <div class="hr" id="hr1">
         <h3 class="hr-title" id="span1" data-aos="fade-right"
-             data-aos-duration="3000"> OUR BEST- SELLING EQUIPMENT </h3>
+            data-aos-duration="3000"> OUR BEST- SELLING EQUIPMENT </h3>
     </div>
 
 
     <!-- ////////////////////////////////////////////////////////////- -->
 
     <div class="row" id="div13" data-aos="fade-left"
-             data-aos-duration="3000">
+         data-aos-duration="3000">
 
         <div class="row" >
             <c:forEach items="${products}" var="product" >
@@ -81,7 +81,7 @@
     </div>
 
     <div class="row" id="div12" data-aos="fade-down"
-             data-aos-duration="3000">
+         data-aos-duration="3000">
 
         <div class="class10">
             <div class="row">
@@ -102,15 +102,11 @@
         }
     </script>
 
-    <button class="open-button" onclick="openForm()">Chat</button>
 
+    <button class="open-button" onclick="openForm()">Send your message</button>
     <div class="chat-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Chat</h1>
-
-            <label for="msg"><b>Message</b></label>
-            <textarea placeholder="Type message.." name="msg" required></textarea>
-
+        <form action="" class="form-container">
+            <textarea placeholder="Type message..." name="msg" required></textarea>
             <button type="submit" class="btn">Send</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
@@ -120,7 +116,6 @@
         function openForm() {
             document.getElementById("myForm").style.display = "block";
         }
-
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
         }

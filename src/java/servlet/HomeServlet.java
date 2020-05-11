@@ -44,6 +44,8 @@ public class HomeServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        
+       
         System.out.println(username + " uname /// pass " + password);
         if (request.getParameter("username") != null && request.getParameter("password") != null) {
             if (!(request.getParameter("username").equals(" ")) && !(request.getParameter("password").equals(" "))) {
@@ -56,6 +58,16 @@ public class HomeServlet extends HttpServlet {
         }
         db.checkLogin(username, password);
 
+        String msg = request.getParameter("msg");
+        if (request.getParameter("msg") != null) {
+            if (!(request.getParameter("msg").equals(" "))) {
+                try {
+                    db.saveChat(msg);
+                } catch (Exception ex) {
+                    Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }
 
     @Override

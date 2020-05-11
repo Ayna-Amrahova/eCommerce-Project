@@ -9,7 +9,7 @@
 <div class="container">
 
     <div class="row" data-aos="fade-up"
-             data-aos-duration="3000"  >
+         data-aos-duration="3000"  >
         <div class="class1" id="class1" >
             <p id="p1" > VISIT US </p>
         </div>
@@ -42,13 +42,13 @@
     <br>
     <br>
     <div class="hr" id="hr1" data-aos="zoom-out-up"
-             data-aos-duration="3000" >
+         data-aos-duration="3000" >
         <h3 class="hr-title" id="span1"> CONTACT US</h3>
     </div>
     <p class="" id="span179" data-aos="zoom-in-up"
-             data-aos-duration="3000"> Swing by for a cup of coffee, or leave us a message</p>
+       data-aos-duration="3000"> Swing by for a cup of coffee, or leave us a message</p>
     <div id="div1" class="fa" data-aos="zoom-in-up"
-             data-aos-duration="3000"></div>
+         data-aos-duration="3000"></div>
 
     <script>
         function hand() {
@@ -72,28 +72,28 @@
         <form action="/MatrixProject/ContactServlet" method="get">
             <input type="text" name="name" id="input1" placeholder="Name" required 
                    data-aos="zoom-out-left"
-             data-aos-duration="1500">
+                   data-aos-duration="1500">
             <input type="text" name="email" id="input2" placeholder="Email" required
                    data-aos="zoom-out-right"
-             data-aos-duration="1500">
+                   data-aos-duration="1500">
             <input type="text" name="subject" id="input3" placeholder="Subject" required
                    data-aos="zoom-out-left"
-             data-aos-duration="1500">
+                   data-aos-duration="1500">
             <input type="text" name="message" id="input4" placeholder="Message" required
                    data-aos="zoom-out-right"
-             data-aos-duration="1500">
+                   data-aos-duration="1500">
             <button type="submit" class="btn" name="button" id="btn1"
                     data-aos="zoom-out-left"
-             data-aos-duration="3000"> Send </button>
+                    data-aos-duration="3000"> Send </button>
         </form>
     </div>
 
     <div class="hr" id="hr2" data-aos="fade-up"
-             data-aos-duration="3000">
+         data-aos-duration="3000">
         <h3 class="hr-title" id="span2"> STOCKISTS </h3>
     </div>
     <div class="row" data-aos="fade-up"
-             data-aos-duration="3000">
+         data-aos-duration="3000">
         <div class="class7" id="class7">
             <p id="p18"> EUROPE </p>
         </div>
@@ -119,7 +119,7 @@
 
 
     <div class="row" data-aos="fade-up"
-             data-aos-duration="3000" >
+         data-aos-duration="3000" >
         <div class="class10" id="class10">
             <p id="p29"> NORTH AMERICA </p>
         </div>
@@ -145,7 +145,7 @@
 
 
     <div class="row" data-aos="fade-up"
-             data-aos-duration="3000">
+         data-aos-duration="3000">
         <div class="class13" id="class13">
             <p id="p40"> ASIA </p>
         </div>
@@ -175,8 +175,28 @@
                 width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </p>
 
-    <%@include file="footer.jsp" %>
+
+    <button class="open-button" onclick="openForm()">Send your message</button>
+    <div class="chat-popup" id="myForm">
+        <form action="" class="form-container">
+            <textarea placeholder="Type message..." name="msg" required></textarea>
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+    </script>
     <script>
         AOS.init();
     </script>
+    <%@include file="footer.jsp" %>
 </html>

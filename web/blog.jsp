@@ -1,73 +1,74 @@
 <%@include file="header.jsp" %>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link rel="stylesheet" href="blog.css">
 <script src="blog.js">
 </script>
 <title> Blog </title>
 <div class="container">
     <div class="hr" id="hr1">
-        <h3 class="hr-title" id="span1"> BLOG </h3>
+        <h3 class="hr-title" id="span1" data-aos="zoom-in"
+            data-aos-duration="3000"> BLOG </h3>
     </div>
 
 
-    <div class="row" id="rows">
-        <div class="column1" id="column1">
-            <img src="./img/blogFoto_1.jpg" alt="blogFoto_1" id="blogFoto1">
-            <div id="content1">
-                <p id="admin1"> <img src="./img/user.jpg" alt="user" id="user"> Admin </p>
-                <p id="date1">Jan 8 &middot 2min</p>
-                <h5 id="spot"> The world's most stunning camping <br> spots </h5>
-                <p id="text1"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
-                    continue reading. Welcome to your blog post. Use this... </p>
-                <hr>
-                <p id="view1">Write a comment
-                    <button type="submit" id="submit3" > <img src="./img/heart.jpg" alt="heart" id="heart1"> </button> </p>
-            </div>
+    <div class="content" id="">
+        <div class="row" >
+            <c:forEach items="${blog}" var="blog" >
 
-            <div class="column3" id="column3">
-                <img src="./img/blogFoto_3.jpg" alt="blogFoto_3" id="blogFoto3">
-                <div id="content3">
-                    <p id="admin3"> <img src="./img/user.jpg" alt="user" id="user3"> Admin </p>
-                    <p id="date3">Jan 8 &middot 2min</p>
-                    <h5 id="himalaya"> Trekking in the Himalayas </h5>
-                    <p id="text3"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
-                        continue reading. Welcome to your blog post. Use this... </p>
-                    <hr>
-                    <p id="view3">  Write a comment
-                        <button type="submit" id="submit5" > <img src="./img/heart.jpg" alt="heart" id="heart3"> </button> </p>
+                <div class="col-md-6" id="div${blog.getId()}" data-aos="fade-up"
+                     data-aos-duration="3000" >
+                    <img src="${blog.getImgPath()}" alt="blogFoto" id="blogFoto${blog.getId()}" >
+
+                    <h5 id="header${blog.getId()}"> ${blog.getHeader()} </h5>
+                    <p id="text${blog.getId()}">${blog.getText()}  </p>
+
+                    <button class="comment" id="comment${blog.getId()}" onclick="openCmn()">${blog.getBtnInfo()}</button>
+
+                    <div class="cmnt" id="form">
+                        <form class="comment-container">
+                            <textarea placeholder="Type comment..." name="msg" required></textarea>
+                            <button type="submit" class="bttn">Send</button>
+                            <button type="button" class="bttn cancel" onclick="closeCmn()">Close</button>
+                        </form>
+                    </div>
+                    <script>
+                        function openCmn() {
+                            document.getElementById("form").style.display = "block";
+                        }
+                        function closeCmn() {
+                            document.getElementById("form").style.display = "none";
+                        }
+                    </script>
                 </div>
+            </c:forEach>
+
+
+            <button class="open-button" onclick="openForm()">Send your message</button>
+            <div class="chat-popup" id="myForm">
+                <form action="" class="form-container">
+                    <textarea placeholder="Type message..." name="msg" required></textarea>
+                    <button type="submit" class="btn">Send</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
             </div>
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
         </div>
-
-
-        <div class="column2" id="column2">
-            <img src="./img/blogFoto_2.jpg" alt="blogFoto_2" id="blogFoto2">
-            <div id="content2">
-                <p id="admin2"> <img src="./img/user.jpg" alt="user" id="user2"> Admin </p>
-                <p id="date2">Jan 8 &middot 1min</p>
-                <h5 id="boots"> How to choose the best hiking boots? <br> Our expert's advise </h5>
-                <p id="text2"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
-                    continue reading. Welcome to your blog post. Use this... </p>
-                <hr>
-                <p id="view2">  Write a comment
-                    <button type="submit" id="submit4" > <img src="./img/heart.jpg" alt="heart" id="heart2"> </button> </p>
-
-            </div>
-        </div>
-
-        <div class="column4" id="column4">
-            <img src="./img/blogFoto_4.jpg" alt="blogFoto_4" id="blogFoto4">
-            <div id="content4">
-                <p id="admin4"> <img src="./img/user.jpg" alt="user" id="user4"> Admin </p>
-                <p id="date4">Jan 8 &middot 1min</p>
-                <h5 id="train"> 15 most scenic train rides </h5>
-                <p id="text4"> Create a blog post subtitle that summarizes your post in a <br> few short, punchy sentences and entices your audience to <br>
-                    continue reading. Welcome to your blog post. Use this... </p>
-                <hr>
-                <p id="view4">  Write a comment
-                    <button type="submit" id="submit6" > <img src="./img/heart.jpg" alt="heart" id="heart4"> </button> </p>
-            </div>
-        </div>
-
     </div>
-    <%@include file="footer.jsp" %>
+</div>
+
+<script>
+    AOS.init();
+</script>
+
+<%@include file="footer.jsp" %>
 </html>

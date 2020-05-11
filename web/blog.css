@@ -1,23 +1,175 @@
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+    background-color: green;
+    border-radius: 100%;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 120px;
+    animation: shake-animation 4.72s ease infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes shake-animation {
+    0% { transform:translate(0,0) }
+    1.78571% { transform:translate(10px,0) }
+    3.57143% { transform:translate(0,0) }
+    5.35714% { transform:translate(10px,0) }
+    7.14286% { transform:translate(0,0) }
+    8.92857% { transform:translate(10px,0) }
+    10.71429% { transform:translate(0,0) }
+    100% { transform:translate(0,0) }
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+    background-color: #350066;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: #e74350;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+    color: white;
+}
+
+/*///////////////////////////////////*/
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.comment {
+    background-color: #350066;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    width: 30%;
+}
+
+.comment:hover {
+    opacity: 0.8;
+}
+
+
+/* The popup chat - hidden by default */
+.cmnt {
+    display: none;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.comment-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width textarea */
+.comment-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.comment-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/send button */
+.comment-container .bttn {
+    background-color: #350066;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.comment-container .cancel {
+    background-color: #e74350;
+}
+
+
 /* width */
 ::-webkit-scrollbar {
-  width: 15px;
+    width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #350066; 
-  border-radius: 10px;
+    background: #350066; 
+    border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+    background: #b30000; 
 }
 .header{
     background-color: #e6e6e6;
@@ -394,45 +546,16 @@
     color: #e6002a;
 }
 
-
-
-#column1{
-
-}
-
 #blogFoto1{
-    width: 400px;
+    width: 520px;
     height: 300px;
     margin-top: 50px;
-    margin-left: 180px;
+    /*margin-left: 180px;*/
 }
 
-#user{
-    width: 40px;
-    height: 40px;
-    margin-top: 20px;
-    margin-left: 200px;
-    border-radius: 100%;
-}
-
-#admin1{
+#header1{
     color: #350066;
-    padding-top: 10px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#date1{
-    color: #350066;
-    padding-left: 240px;
-    margin-top: -40px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#spot{
-    color: #350066;
-    padding-left: 200px;
+    /*padding-left: 200px;*/
     padding-top: 10px;
     font-family: sans-serif;
     font-weight: bold;
@@ -440,74 +563,26 @@
 
 #text1{
     color: #c0a5b9;
-    padding-left: 200px;
+    /*padding-left: 200px;*/
     padding-top: 10px;
     font-size: 13px;
     font-family: sans-serif;
 }
 
-#view1{
-    color: #350066;
-    padding-left: 200px;
-    padding-top: 10px;
-    font-size: 11px;
-    font-family: sans-serif;
+
+
+#column1{
 }
-
-#heart1{
-    width: 20px;
-    height: 20px;
-    margin-left: -3px;
-}
-
-#submit3{
-    width: 30px;
-    height: 30px;
-    margin-left: 170px;
-    border-color: #e6002a;
-}
-
-
-
 
 #column2{
 }
 
-#content2{
-    padding-left: 30px;
-}
 
-#blogFoto2{
-    width: 500px;
-    height: 700px;
-    margin-top: 50px;
-    margin-left: 30px;
-}
 
-#user2{
-    width: 40px;
-    height: 40px;
-    margin-top: 20px;
-    border-radius: 100%;
-}
 
-#admin2{
+#header2{
     color: #350066;
-    padding-top: 10px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#date2{
-    color: #350066;
-    padding-left: 40px;
-    margin-top: -40px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#boots{
-    color: #350066;
+    /*padding-left: 500px;*/
     padding-top: 10px;
     font-family: sans-serif;
     font-weight: bold;
@@ -515,69 +590,23 @@
 
 #text2{
     color: #c0a5b9;
+    /*padding-left: 500px;*/
     padding-top: 10px;
     font-size: 13px;
     font-family: sans-serif;
 }
 
-#view2{
-    color: #350066;
-    padding-top: 10px;
-    font-size: 11px;
-    font-family: sans-serif;
-}
 
-#heart2{
-    width: 20px;
-    height: 20px;
-    margin-left: -3px;
-}
-
-#submit4{
-    width: 30px;
-    height: 30px;
-    margin-left: 300px;
-    border-color: #e6002a;
-}
-
-
-#column3{
-
-}
 
 #blogFoto3{
-    width: 400px;
+    margin-top: -150px;
+    width: 520px;
     height: 300px;
-    margin-top: 70px;
-    margin-left: 180px;
 }
 
-#user3{
-    width: 40px;
-    height: 40px;
-    margin-top: 20px;
-    margin-left: 200px;
-    border-radius: 100%;
-}
 
-#admin3{
+#header3{
     color: #350066;
-    padding-top: 10px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#date3{
-    color: #350066;
-    padding-left: 240px;
-    margin-top: -40px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#himalaya{
-    color: #350066;
-    padding-left: 200px;
     padding-top: 10px;
     font-family: sans-serif;
     font-weight: bold;
@@ -585,71 +614,31 @@
 
 #text3{
     color: #c0a5b9;
-    padding-left: 200px;
     padding-top: 10px;
     font-size: 13px;
     font-family: sans-serif;
 }
 
-#view3{
-    color: #350066;
-    padding-left: 200px;
-    padding-top: 10px;
-    font-size: 11px;
-    font-family: sans-serif;
-}
-
-#heart3{
-    width: 20px;
-    height: 20px;
-    margin-left: -3px;
-}
-
-#submit5{
-    width: 30px;
-    height: 30px;
-    margin-left: 170px;
-    border-color: #e6002a;
-}
 
 #column4{
     padding-top: 30px;
 }
 
-#content4{
-    padding-left: 620px;
+
+#blogFoto2{
+    margin-top: 50px;
+    width: 500px;
+    height: 500px;
 }
+
 
 #blogFoto4{
+    margin-top: 50px;
     width: 500px;
     height: 300px;
-    margin-top: -250px;
-    margin-left: 620px;
 }
 
-#user4{
-    width: 40px;
-    height: 40px;
-    margin-top: 20px;
-    border-radius: 100%;
-}
-
-#admin4{
-    color: #350066;
-    padding-top: 10px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#date4{
-    color: #350066;
-    padding-left: 40px;
-    margin-top: -40px;
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
-#train{
+#header4{
     color: #350066;
     padding-top: 10px;
     font-family: sans-serif;
@@ -661,26 +650,6 @@
     padding-top: 10px;
     font-size: 13px;
     font-family: sans-serif;
-}
-
-#view4{
-    color: #350066;
-    padding-top: 10px;
-    font-size: 11px;
-    font-family: sans-serif;
-}
-
-#heart4{
-    width: 20px;
-    height: 20px;
-    margin-left: -3px;
-}
-
-#submit6{
-    width: 30px;
-    height: 30px;
-    margin-left: 300px;
-    border-color: #e6002a;
 }
 
 
@@ -811,4 +780,22 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
+
+
+#comment1{
+    margin-left: 160px;
+}
+
+#comment3{
+    margin-left: 160px;
+}
+
+#comment2{
+    margin-left: 160px;
+}
+
+#comment4{
+    margin-left: 160px;
 }
