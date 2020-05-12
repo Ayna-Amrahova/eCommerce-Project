@@ -34,8 +34,8 @@ public class ShopServlet extends HttpServlet {
         String prod_name = request.getParameter("productName");
         String prod_price = request.getParameter("productPrice");
 //        double actualPrice = Double.valueOf(prod_price);
-        System.out.println(prod_name + "-------name");
-        System.out.println(prod_price + "-------price");
+        System.out.println(prod_name + "-------name Get Method");
+        System.out.println(prod_price + "-------price Get Method");
         DB db = new DB();
         List<ProductCategory> category = db.getProductCategories();
         List<Product> products;
@@ -80,8 +80,9 @@ public class ShopServlet extends HttpServlet {
         String prod_name = request.getParameter("productName");
         String prod_price = request.getParameter("productPrice");
 //        double actualPrice = Double.valueOf(prod_price);
-        System.out.println(prod_name + "-------name");
-        System.out.println(prod_price + "-------price");
+        System.out.println(prod_name + "-------name Post Method");
+        System.out.println(prod_price + "-------price Post Method");
+        
 
         DB db = new DB();
 //        db.saveProducts(prod_name, actualPrice);

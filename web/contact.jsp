@@ -47,27 +47,12 @@
     </div>
     <p class="" id="span179" data-aos="zoom-in-up"
        data-aos-duration="3000"> Swing by for a cup of coffee, or leave us a message</p>
-    <div id="div1" class="fa" data-aos="zoom-in-up"
-         data-aos-duration="3000"></div>
+    <div id="div1" class="coffee" data-aos="zoom-in-up"
+         data-aos-duration="3000">
 
-    <script>
-        function hand() {
-            var a;
-            a = document.getElementById("div1");
-            a.innerHTML = "&#xf25a;";
-            setTimeout(function () {
-                a.innerHTML = "&#xf256;";
-            }, 500);
-            setTimeout(function () {
-                a.innerHTML = "&#xf259;";
-            }, 1000);
-            setTimeout(function () {
-                a.innerHTML = "&#xf256;";
-            }, 1500);
-        }
-        hand();
-        setInterval(hand, 2000);
-    </script>
+        <img src="img/source.gif" alt="coffee" width="60px" height="60px"/>
+    </div>
+
     <div class="col-md-6" id="inputs">
         <form action="/MatrixProject/ContactServlet" method="get">
             <input type="text" name="name" id="input1" placeholder="Name" required 

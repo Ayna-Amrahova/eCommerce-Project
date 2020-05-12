@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Home;
 import model.Product;
-import model.User;
 
 public class HomeServlet extends HttpServlet {
 
@@ -44,8 +43,7 @@ public class HomeServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
-       
+
         System.out.println(username + " uname /// pass " + password);
         if (request.getParameter("username") != null && request.getParameter("password") != null) {
             if (!(request.getParameter("username").equals(" ")) && !(request.getParameter("password").equals(" "))) {
@@ -90,5 +88,6 @@ public class HomeServlet extends HttpServlet {
             }
         }
         db.checkLogin(username, password);
+
     }
 }

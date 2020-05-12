@@ -92,6 +92,7 @@
     padding: 10px 10px;
     border: none;
     width: 30%;
+    position: fixed;
 }
 
 .comment:hover {
@@ -101,6 +102,7 @@
 
 /* The popup chat - hidden by default */
 .cmnt {
+    position: fixed;
     display: none;
     bottom: 0;
     right: 15px;
@@ -273,8 +275,8 @@
     background-color: #404040;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-left: -200px;
-    margin-right: -100px;
+/*    margin-left: -200px;
+    margin-right: -100px;*/
 }
 
 #pf11{
@@ -509,7 +511,7 @@
 
 #pf61{
     color: #d9d9d9;
-    padding-left: 550px;
+    padding-left: 650px;
     font-size: 10px;
     font-family: sans-serif;
     text-shadow: 2px 2px 4px grey;
@@ -798,4 +800,13 @@ span.psw {
 
 #comment4{
     margin-left: 160px;
+}
+
+
+#div2{
+    padding-bottom: 50px;
+}
+
+#div4{
+    padding-bottom: 50px;
 }

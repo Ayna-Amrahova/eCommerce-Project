@@ -5,27 +5,7 @@
 <script src="shop.js">
 </script>
 
-<div id="id1" class="odal">
-    <div class="col-md-3">
-        <form class="modal-content animate"  method="post">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id1').style.display = 'none'" class="close" title="Close Modal">&times;</span>
 
-            </div>
-
-            <div class="container">
-                <input type="text" placeholder="Product Name" id="productName" required/> 
-
-                <input type="text" placeholder="Price ($)" id="productPrice" required/> 
-
-                <button type="submit" id="login">Add Product</button>
-
-            </div>
-
-
-        </form>
-    </div>
-</div>
 
 
 
@@ -74,23 +54,20 @@
                         }
                     });
                 });
-
-
-
             </script>
         </c:forEach>
     </div>
     <div class="content" id="">
         <div class="row" >
 
-
             <c:forEach items="${products}" var="products">
 
                 <div class="col-md-4" id="div1" data-aos="zoom-in-up"
                      data-aos-duration="3000" >
                     <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
-                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}" onclick="document.getElementById('id1').style.display = 'block'"/>
-                    <p id="name_${products.getId()}" class="p1"> <c:out value="${products.getName()}"/> </p>
+                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}"
+                         onclick="document.getElementById('id1').style.display = 'block'"/>
+                    <p id="name_${products.getId()}" class="p1"> <c:out value="${products.getName()}"/> </p> 
                     <hr>
                     <p id="p2" class="p2"> <strike id="strike1"> 
                         <c:out value="${products.getPrice()}"/> 
@@ -102,6 +79,48 @@
                     <br>
                     <br>
                 </div>
+                <div id="id1" class="odal">
+                    <div class="col-md-4">
+                        <form class="modal-content animate"  method="get">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id1').style.display = 'none'" 
+                                      class="close" title="Close Modal">&times;</span>
+
+                            </div>
+
+                            <div class="container">
+                                <input type="text" placeholder="Product Name" id="productName" required/> 
+
+                                <input type="text" placeholder="Price ($)" id="productPrice" required/> 
+
+                                <button type="submit" id="login">Add Product</button>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $("${products.getId()}").click(function () {
+                            var id = $(this).attr("id");
+                            $("img_prod").click(function () {
+                                alert($("#name_").html());
+                            });
+
+                        });
+                    });
+                    
+                    // Get the modal
+                    var odal = document.getElementById('id1');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target === odal) {
+                            odal.style.display = "none";
+                        }
+                    }
+                </script>
             </c:forEach>
         </div
     </div>
@@ -111,27 +130,9 @@
 <br>
 <br>
 
+
 <script>
 
-    $(".img_prod").click(
-            function () {
-                var id = $(this).attr("id");
-                var prod_name = $.trim($("#name_" + id).html());
-                var prod_price = $.trim($("#price_" + id).html());
-                        $(#"productName").val(prod_name);
-                        $(#"productPrice").val(prod_price);
-            }
-    );
-
-    // Get the modal
-    var odal = document.getElementById('id1');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target === odal) {
-            odal.style.display = "none";
-        }
-    }
 </script>
 
 <button class="open-button" onclick="openForm()">Send your message</button>
