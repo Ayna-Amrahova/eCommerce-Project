@@ -10,16 +10,13 @@ public class Product {
     private String info;
     private String imgPath;
 
+    
     public Product() {
     }
 
-    public Product(int id, String imgPath) {
+    public Product(int id, String imgPath, String name, double actualPrice) {
         this.id = id;
         this.imgPath = imgPath;
-    }
-
-    public Product(int id, String name, double actualPrice) {
-        this.id = id;
         this.name = name;
         this.actualPrice = actualPrice;
     }

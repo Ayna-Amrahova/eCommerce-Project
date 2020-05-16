@@ -1,3 +1,16 @@
+.img_prod{
+    height: 50%;
+    width: 100%;
+}
+
+#span1 {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: row;
+    color: #350066;
+    font-family: sans-serif;
+}
+
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
     background-color: green;

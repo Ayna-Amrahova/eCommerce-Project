@@ -32,8 +32,9 @@ public class BlogServlet extends HttpServlet {
         }
 
         String msg = request.getParameter("msg");
-        if (request.getParameter("msg") != null) {
-            if (!(request.getParameter("msg").equals(" "))) {
+
+        if (msg != null) {
+            if (!(msg.equals(" "))) {
                 try {
                     db.saveChat(msg);
                 } catch (Exception ex) {
@@ -41,6 +42,7 @@ public class BlogServlet extends HttpServlet {
                 }
             }
         }
+
     }
 
     @Override
@@ -49,7 +51,21 @@ public class BlogServlet extends HttpServlet {
 
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
-
+        DB db = new DB();
+        
+        
+        
+        String comment = request.getParameter("comment");
+        System.out.println(comment + "   ///cmn");
+        if (comment != null) {
+            if (!(comment.equals(" "))) {
+                try {
+                    db.saveComment(comment);
+                } catch (Exception ex) {
+                    Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }
 
 }

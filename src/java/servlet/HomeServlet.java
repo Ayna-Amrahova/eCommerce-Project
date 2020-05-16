@@ -44,7 +44,6 @@ public class HomeServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        System.out.println(username + " uname /// pass " + password);
         if (request.getParameter("username") != null && request.getParameter("password") != null) {
             if (!(request.getParameter("username").equals(" ")) && !(request.getParameter("password").equals(" "))) {
                 try {

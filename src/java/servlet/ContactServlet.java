@@ -39,7 +39,7 @@ public class ContactServlet extends HttpServlet {
         String toEmail = request.getParameter("email");
         String subject = request.getParameter("subject");
         String message = request.getParameter("message");
-        System.out.println(name + "  ///  " + toEmail + "  ///  " + subject + "  ///  " + message);
+        System.out.println(name + "  //// get ////  " + toEmail + "  ///  " + subject + "  ///  " + message);
         DB db = new DB();
         String msg = request.getParameter("msg");
         if (request.getParameter("msg") != null) {
@@ -56,18 +56,17 @@ public class ContactServlet extends HttpServlet {
         String username = "emrahova.a00";
         String password = "16071808";
 
-        if (request.getParameter("name") != null && request.getParameter("email") != null
-                && request.getParameter("subject") != null && request.getParameter("message") != null) {
-            if (!(request.getParameter("name").equals("")) && !(request.getParameter("email").equals(""))
-                    && !(request.getParameter("subject").equals("")) && !(request.getParameter("message").equals(""))) {
-                try {
-                    db.saveContact(name, toEmail, subject, message);
-
-                } catch (Exception ex) {
-                    System.out.println(ex.toString());
-                }
-            }
-        }
+//        if (request.getParameter("name") != null && request.getParameter("email") != null
+//                && request.getParameter("subject") != null && request.getParameter("message") != null) {
+//            if (!(request.getParameter("name").equals("")) && !(request.getParameter("email").equals(""))
+//                    && !(request.getParameter("subject").equals("")) && !(request.getParameter("message").equals(""))) {
+//                try {
+//                    db.saveContact(name, toEmail, subject, message);
+//                } catch (Exception ex) {
+//                    System.out.println(ex.toString());
+//                }
+//            }
+//        }
 
     }
 
@@ -78,28 +77,7 @@ public class ContactServlet extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
 
-        PrintWriter pw = response.getWriter();
-
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
-        String subject = request.getParameter("subject");
-        String message = request.getParameter("message");
-        System.out.println(name + "  ///  " + email + "  ///  " + subject + "  ///  " + message);
-        DB db = new DB();
-
-        if (request.getParameter("name") != null && request.getParameter("email") != null
-                && request.getParameter("subject") != null && request.getParameter("message") != null) {
-            if (!(request.getParameter("name").equals("")) && !(request.getParameter("email").equals(""))
-                    && !(request.getParameter("subject").equals("")) && !(request.getParameter("message").equals(""))) {
-                try {
-                    db.saveContact(name, email, subject, message);
-
-                } catch (Exception ex) {
-                    System.out.println(ex.toString());
-                }
-            }
-        }
-        System.out.println(name + "  ///  " + email + "  ///  " + subject + "  ///  " + message);
+        
 
     }
 }

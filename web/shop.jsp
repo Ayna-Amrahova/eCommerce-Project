@@ -4,7 +4,10 @@
 <link rel="stylesheet" href="shop.css">
 <script src="shop.js">
 </script>
-
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
 
 
 
@@ -24,12 +27,12 @@
                     <option value="asc"  id="sorting" > From cheap to expensive </option>
                     <option value="desc" id="sorting"> From expensive to cheap </option>
                     <script>
-                        $(document).ready(function () {
-                            $("select.sorting").change(function () {
-                                var sortBy = $(this).children("option:selected").val();
-                                $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?sortBy=' + sortBy);
-                            });
-                        });
+    $(document).ready(function () {
+        $("select.sorting").change(function () {
+            var sortBy = $(this).children("option:selected").val();
+            $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?sortBy=' + sortBy);
+        });
+    });
                     </script>
                 </div>
             </div>
@@ -67,6 +70,9 @@
                     <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
                     <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}"
                          onclick="document.getElementById('id1').style.display = 'block'"/>
+
+                    <p hidden id="img_${products.getId()}" class="p1" name="productImage"> ${products.getImgPath()} </p> 
+                    <p id="prodImg"></p>
                     <p id="name_${products.getId()}" class="p1"> <c:out value="${products.getName()}"/> </p> 
                     <hr>
                     <p id="p2" class="p2"> <strike id="strike1"> 
@@ -81,7 +87,7 @@
                 </div>
                 <div id="id1" class="odal">
                     <div class="col-md-4">
-                        <form class="modal-content animate"  method="get">
+                        <form class="modal-content animate"  method="post">
                             <div class="imgcontainer">
                                 <span onclick="document.getElementById('id1').style.display = 'none'" 
                                       class="close" title="Close Modal">&times;</span>
@@ -89,39 +95,85 @@
                             </div>
 
                             <div class="container">
-                                <input type="text" placeholder="Product Name" id="productName" required/> 
+                                <input type="text" placeholder="Product Name" id="productName" name="productName" required/> 
 
-                                <input type="text" placeholder="Price ($)" id="productPrice" required/> 
+                                <input type="text" placeholder="Price ($)" id="productPrice" name="productPrice" required/> 
+                                
+                                <input  type="hidden" placeholder="Price ($)" id="productImage" name="productImage" required/> 
 
-                                <button type="submit" id="login">Add Product</button>
+                                <button type="submit" id="addProduct">Add Product</button>
 
                             </div>
 
                         </form>
                     </div>
                 </div>
-                <script>
-                    $(document).ready(function () {
-                        $("${products.getId()}").click(function () {
-                            var id = $(this).attr("id");
-                            $("img_prod").click(function () {
-                                alert($("#name_").html());
-                            });
 
-                        });
-                    });
-                    
-                    // Get the modal
-                    var odal = document.getElementById('id1');
-
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function (event) {
-                        if (event.target === odal) {
-                            odal.style.display = "none";
-                        }
-                    }
-                </script>
             </c:forEach>
+            <script>
+                $(document).ready(function () {
+                    $(".img_prod").click(function () {
+                        var id = $(this).attr("id");
+                        var prod_name = $.trim($("#name_" + id).html());
+                        var prod_price = $.trim($("#price_" + id).html());
+                        var prod_img = $.trim($("#img_" + id).html());
+                        $("#productImage").val(prod_img);
+                        $("#productName").val(prod_name);
+                        $("#productPrice").val(prod_price);
+
+
+
+                    }
+                    );
+                }
+
+                );
+
+                $("#addProduct").click(function ( ) {
+                    var name = $("#productName").val();
+                    var price = $("#productPrice").val();
+                    var img = $("#productImage").val();
+                    alert(img);
+                    var data = {};
+                    data.name = name;
+                    data.price = price;
+                    data.img = img;
+
+                    $.ajax(
+                            {
+                                "url": "/ShopServlet",
+                                "method": "POST",
+                                "data": data,
+                                "success": function (check) {
+                                    if (!check.success) {
+                                        alert('Error!');
+                                    } else {
+                                        alert('Success!');
+                                    }
+                                    $("#productName").val("");
+                                    $("#productPrice").val("");
+                                    $("#prodImg").val("");
+
+                                }
+
+                            }
+
+                    );
+                }
+
+
+
+
+                )
+
+                var odal = document.getElementById('id1');
+
+                window.onclick = function (event) {
+                    if (event.target === odal) {
+                        odal.style.display = "none";
+                    }
+                }
+            </script>
         </div
     </div>
 </div>

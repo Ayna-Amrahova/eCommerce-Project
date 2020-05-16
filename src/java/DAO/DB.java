@@ -159,7 +159,7 @@ public class DB {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Product s = new Product(rs.getInt("id"), rs.getString("name"), rs.getDouble("actual_price"));
+                Product s = new Product(rs.getInt("id"), rs.getString("img_path"), rs.getString("name"), rs.getDouble("actual_price"));
                 list.add(s);
             }
             return list;
@@ -169,11 +169,12 @@ public class DB {
         }
     }
 
-    public boolean saveProducts(String name, double actualPrice) {
+    public boolean saveProducts(String img_path, String name, double actualPrice) {
         try {
-            ps = conn.prepareStatement("insert into selected_products(name, actual_price) values (?, ?)");
-            ps.setString(1, name);
-            ps.setDouble(2, actualPrice);
+            ps = conn.prepareStatement("insert into selected_products(img_path, name, actual_price) values (?, ?, ?)");
+            ps.setString(1, img_path);
+            ps.setString(2, name);
+            ps.setDouble(3, actualPrice);
             ps.execute();
             return true;
         } catch (Exception ex) {
@@ -336,6 +337,18 @@ public class DB {
         } catch (Exception ex) {
             System.out.println(ex);
             return null;
+        }
+    }
+
+    public boolean saveComment(String comment) {
+        try {
+            ps = conn.prepareStatement("insert into blog_comment(comment) values (?)");
+            ps.setString(1, comment);
+            ps.execute();
+            return true;
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return false;
         }
     }
 }

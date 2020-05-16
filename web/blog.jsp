@@ -25,23 +25,58 @@
 
                     <button class="comment" id="comment${blog.getId()}" onclick="openCmn()">${blog.getBtnInfo()}</button>
 
-                    <div class="cmnt" id="form">
-                        <form class="comment-container">
-                            <textarea placeholder="Type comment..." name="msg" required></textarea>
-                            <button type="submit" class="bttn">Send</button>
-                            <button type="button" class="bttn cancel" onclick="closeCmn()">Close</button>
-                        </form>
-                    </div>
-                    <script>
-                        function openCmn() {
-                            document.getElementById("form").style.display = "block";
-                        }
-                        function closeCmn() {
-                            document.getElementById("form").style.display = "none";
-                        }
-                    </script>
+
                 </div>
             </c:forEach>
+            <div class="cmnt" id="form">
+                <form class="comment-container" method="POST">
+                    <textarea placeholder="Type comment..." name="comment" id="comment" required></textarea>
+                    <button type="submit" id="bttn">Send</button>
+                    <button type="button" class="bttn cancel" onclick="closeCmn()">Close</button>
+                </form>
+            </div>
+            <script>
+
+                $(document).ready(
+                        function () {
+
+                            $("#bttn").click(
+                                    function () {
+                                        var comment = $("#comment").val();
+                                        var data = {};
+                                        data.comment = comment;
+                                        alert(comment);
+                                        $.ajax(
+                                                {
+                                                    "url": "/BlogServlet",
+                                                    "method": "post",
+                                                    "data": data,
+                                                    "success": function (check) {
+                                                        if (!check.success) {
+                                                            alert('Error!');
+                                                        } else {
+                                                            alert('Success!');
+                                                        }
+
+                                                    }
+
+                                                }
+
+                                        );
+
+                                    }
+
+                            );
+//                            $("#comment").val("");
+                        }
+                );
+                function openCmn() {
+                    document.getElementById("form").style.display = "block";
+                }
+                function closeCmn() {
+                    document.getElementById("form").style.display = "none";
+                }
+            </script>
 
 
             <button class="open-button" onclick="openForm()">Send your message</button>
