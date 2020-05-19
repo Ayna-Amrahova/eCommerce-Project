@@ -78,7 +78,6 @@
                 }
             </script>
 
-
             <button class="open-button" onclick="openForm()">Send your message</button>
             <div class="chat-popup" id="myForm">
                 <form action="" class="form-container">
