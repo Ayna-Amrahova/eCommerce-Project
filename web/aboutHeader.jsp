@@ -34,7 +34,7 @@
                 <p id="nav3" onclick="openPage('http://localhost:8080/MatrixProject/BlogServlet')"> BLOG</p>
                 <p id="nav4" onclick="openPage('http://localhost:8080/MatrixProject/AboutServlet')"> ABOUT </p>
                 <p id="nav5" onclick="openPage('http://localhost:8080/MatrixProject/ContactServlet')"> CONTACT</p>
-                <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SecondServlet')">
+                <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SelectedProductsServlet')">
 
                 <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" id="login">Login</button>
 

@@ -13,7 +13,7 @@ import model.Product;
 
 @WebServlet(urlPatterns = {"/SecondServlet"})
 
-public class SecondServlet extends HttpServlet {
+public class SelectedProductsServlet extends HttpServlet {
 
     private ServletConfig config;
 

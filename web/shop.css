@@ -116,17 +116,6 @@
     z-index: 9999;
 }
 
-#addProduct{
-    background-color: aliceblue;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    right: 0;
-    width: 100%;
-    padding: 20px;
-    color:#350066;
-    z-index: 9999;
-}
 
 #head{
     color: #e6002a;
@@ -227,6 +216,17 @@
     font-size: 12px;
     font-family: sans-serif;
     color:#350066;
+}
+
+#addProduct{
+    background-color: #350066;
+    color: white;
+    padding: 14px 20px;
+    margin-left: 80px;
+}
+
+#addProduct:hover {
+    opacity: 0.8;
 }
 
 #submit{

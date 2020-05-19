@@ -98,8 +98,8 @@ crossorigin="anonymous"></script>
                                 <input type="text" placeholder="Product Name" id="productName" name="productName" required/> 
 
                                 <input type="text" placeholder="Price ($)" id="productPrice" name="productPrice" required/> 
-                                
-                                <input  type="hidden" placeholder="Price ($)" id="productImage" name="productImage" required/> 
+
+                                <input  type="hidden" placeholder="Image" id="productImage" name="productImage" required/> 
 
                                 <button type="submit" id="addProduct">Add Product</button>
 
@@ -120,9 +120,6 @@ crossorigin="anonymous"></script>
                         $("#productImage").val(prod_img);
                         $("#productName").val(prod_name);
                         $("#productPrice").val(prod_price);
-
-
-
                     }
                     );
                 }
@@ -133,7 +130,6 @@ crossorigin="anonymous"></script>
                     var name = $("#productName").val();
                     var price = $("#productPrice").val();
                     var img = $("#productImage").val();
-                    alert(img);
                     var data = {};
                     data.name = name;
                     data.price = price;

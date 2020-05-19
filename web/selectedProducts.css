@@ -1,6 +1,5 @@
 .img_prod{
     height: 50%;
-    width: 100%;
 }
 
 #span1 {
@@ -129,17 +128,6 @@
     z-index: 9999;
 }
 
-#addProduct{
-    background-color: aliceblue;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    right: 0;
-    width: 100%;
-    padding: 20px;
-    color:#350066;
-    z-index: 9999;
-}
 
 #head{
     color: #e6002a;
@@ -228,30 +216,6 @@
     margin: auto;
 }
 
-#productName{
-    font-weight: bold;
-    font-size: 12px;
-    font-family: sans-serif;
-    color: #350066;
-}
-
-#productPrice{
-    font-weight: bold;
-    font-size: 12px;
-    font-family: sans-serif;
-    color:#350066;
-}
-
-#submit{
-    height: 30px;
-    width: 130px;
-    background-color: skyblue;
-
-}
-
-#submit:hover {
-    background-color: #80c1ff;
-}
 
 #footer{
     margin-top: 25px;
@@ -502,7 +466,6 @@
 
 
 .menu{
-
     float:left;
     margin:10px 0 10px 5px;
     height:350px;
@@ -515,21 +478,6 @@
 }
 
 
-
-#shopby{
-    color: #350066;
-}
-
-#shopBy{
-    font-size: 20px;
-    font-family: sans-serif;
-}
-
-.categories{
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: bold;
-}
 
 .p1{
     color: #d9d9d9;
@@ -571,26 +519,6 @@
     padding-top: 50px;
 }
 
-#shopBysorting{
-    color: #350066;
-    padding-left: 750px;
-    font-size: 16px;
-    font-family: sans-serif;
-    font-weight: bold;
-}
-
-#sorting{
-    color: #350066;
-    font-size: 13px;
-    font-family: sans-serif;
-    font-weight: bold;
-}
-
-.img_prod{
-    height: 50%;
-    width: 100%;
-}
-
 #btn1{
     height: 30px;
     width: 330px;
@@ -620,13 +548,6 @@
     text-shadow: 2px 2px 5px ;
 }
 
-#p2{
-    color: #350066;
-    padding-left: 20px;
-    font-size: 12px;
-    font-family: sans-serif;
-    font-weight: bold;
-}
 #strike2{
     color: #c0a5b9;
     font-size: 12px;
