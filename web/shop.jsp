@@ -40,7 +40,7 @@ crossorigin="anonymous"></script>
     </div>
 
     <div class="menu" id="shopby">
-        <p id="shopBy">Shop by </p>
+        <p id="shopBy">Shop by category: </p>
         <hr>
         <c:forEach items="${category}" var="category">
             <ul class="categories"> 
@@ -59,7 +59,29 @@ crossorigin="anonymous"></script>
                 });
             </script>
         </c:forEach>
+        <br><br><br>
+        <p id="shopByInfo">Shop by info: </p>
+        <hr>
+        <c:forEach items="${info}" var="info">
+            <ul class="infos" onclick="shopByInfo()"> 
+                <li id="${info.getId()}"><c:out value="${info.getInfo()}" /></li>
+            </ul>
+            <script>
+                function shopByInfo(){
+                     $("#${info.getId()}").click(function () {
+                        var infoId = $(this).attr("id");
+                        $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?infoId=' + infoId);
+
+                    });
+                }
+            </script>
+        </c:forEach>
     </div>
+
+
+
+
+
     <div class="content" id="">
         <div class="row" >
 
@@ -68,10 +90,10 @@ crossorigin="anonymous"></script>
                 <div class="col-md-4" id="div1" data-aos="zoom-in-up"
                      data-aos-duration="3000" >
                     <p class="label info" id="info1"><c:out value="${products.getInfo()}"/></p>
-                    <img src="${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}"
+                    <img src="./img/${products.getImgPath()}" alt="palatka" class = "img_prod" id="${products.getId()}"
                          onclick="document.getElementById('id1').style.display = 'block'"/>
 
-                    <p hidden id="img_${products.getId()}" class="p1" name="productImage"> ${products.getImgPath()} </p> 
+                    <p hidden id="img_${products.getId()}" class="p1" name="productImage"> ./img/${products.getImgPath()} </p> 
                     <p id="prodImg"></p>
                     <p id="name_${products.getId()}" class="p1"> <c:out value="${products.getName()}"/> </p> 
                     <hr>

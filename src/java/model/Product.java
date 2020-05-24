@@ -9,8 +9,8 @@ public class Product {
     private double actualPrice;
     private String info;
     private String imgPath;
+    private String infoId;
 
-    
     public Product() {
     }
 
@@ -21,7 +21,7 @@ public class Product {
         this.actualPrice = actualPrice;
     }
 
-    public Product(int id, String categoryId, String name, double price, double actualPrice, String info, String imgPath) {
+     public Product(int id, String categoryId, String name, double price, double actualPrice, String info, String imgPath) {
         this.id = id;
         this.categoryId = categoryId;
         this.name = name;
@@ -29,6 +29,17 @@ public class Product {
         this.actualPrice = actualPrice;
         this.info = info;
         this.imgPath = imgPath;
+    }
+    
+    public Product(int id, String categoryId, String name, double price, double actualPrice, String info, String imgPath, String infoId) {
+        this.id = id;
+        this.categoryId = categoryId;
+        this.name = name;
+        this.price = price;
+        this.actualPrice = actualPrice;
+        this.info = info;
+        this.imgPath = imgPath;
+        this.infoId = infoId;
     }
 
     public int getId() {
@@ -85,6 +96,14 @@ public class Product {
 
     public void setImgPath(String imgPath) {
         this.imgPath = imgPath;
+    }
+
+    public String getInfoId() {
+        return infoId;
+    }
+
+    public void setInfoId(String infoId) {
+        this.infoId = infoId;
     }
 
 }

@@ -512,7 +512,19 @@
     font-family: sans-serif;
 }
 
+
+#shopByInfo{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
 .categories{
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.infos{
     font-size: 15px;
     font-family: sans-serif;
     font-weight: bold;

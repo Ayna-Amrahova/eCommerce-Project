@@ -6,27 +6,40 @@
 </script>
 <%@include file="header.jsp" %>
 <div class="container">
-
+    <%!int counter = 0;%>
     <c:forEach items="${home}" var="home" >
 
         <div class="row" id="div1" data-aos="fade-up"
              data-aos-duration="3000" >
+
             <img src="${home.getImgPath()}" alt="" id="pic1" >
             <div class="content1">
                 <h2 id="h21">${home.getHeader()}</h2>
                 <p id="p1">${home.getParagraph()}</p>
                 </br>
                 </br>
-                <button type="button" class="btn" name="button" id="btn1"> ${home.getBtnInfo()} </button>
+                <% if (counter == 0) { %>
+                <button type="button" class="btn" name="button" id="btn1" onclick="openPage('http://localhost:8080/MatrixProject/AboutServlet')"> ${home.getBtnInfo()} </button>
+                <% } else if (counter == 1) { %>
+                <button type="button" class="btn" name="button" id="btn1" onclick="openPage('http://localhost:8080/MatrixProject/ShopServlet?infoId=2')"> ${home.getBtnInfo()} </button>
+                <% } else if (counter == 2) {%>
+                <button type="button" class="btn" name="button" id="btn1" onclick="openPage('http://localhost:8080/MatrixProject/ShopServlet?infoId=1')"> ${home.getBtnInfo()} </button>
+                <% } else if (counter == 3) {%>
+                <button type="button" class="btn" name="button" id="btn1" onclick="openPage('http://localhost:8080/MatrixProject/ContactServlet')"> ${home.getBtnInfo()} </button>
+                <% }
+                %>
                 </br>
                 </br>
                 </br>
                 </br>
             </div>
+            <%counter++;%>
+            <% if (counter == 4) { %>
+            <%counter = 0;%>
+            <% }
+            %>
         </div>
-
     </c:forEach>
-
 
     <div class="row" id="givingBack" data-aos="zoom-in"
          data-aos-duration="3000">
@@ -63,7 +76,7 @@
         <div class="row" >
             <c:forEach items="${products}" var="product" >
                 <p class="label info" id="info1"><c:out value="${product.getInfo()}"/></p>
-                <img src="${product.getImgPath()}" alt="foto" id="work_id">
+                <img src="./img/${product.getImgPath()}" alt="foto" id="work_id">
                 <p id="pp1"> <c:out value="${product.getName()}"/> </p>
                 <hr>
                 <p id="pp2"> <strike id="strike1"> <c:out value="${product.getPrice()}"/> </strike> &nbsp ${product.getActualPrice()} </p>

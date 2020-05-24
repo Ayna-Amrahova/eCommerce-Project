@@ -15,6 +15,7 @@ import model.Blog;
 import model.Home;
 import model.Product;
 import model.ProductCategory;
+import model.ProductInfo;
 
 public class DB {
 
@@ -60,28 +61,25 @@ public class DB {
             return null;
         }
     }
-
-    public ProductCategory getCategorieById(int id) {
-
-        ProductCategory category = new ProductCategory();
-        ArrayList<ProductCategory> list = new ArrayList();
-
+    
+    public List<ProductInfo> getProductInfos() {
         try {
-            ps = conn.prepareStatement("SELECT * from product_category where id=?");
-            ps.setInt(1, id);
+            List<ProductInfo> list = new ArrayList<>();
+            String sql = "select * from product_info";
+            ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                ProductCategory pc = new ProductCategory(rs.getInt("id"), rs.getString("category_name"));
+                ProductInfo pc = new ProductInfo(rs.getInt("id"), rs.getString("info"));
                 list.add(pc);
             }
-            return category;
+            return list;
         } catch (SQLException ex) {
             System.out.println(ex);
             return null;
         }
-
     }
 
+   
     public List<Product> getProducts(String sortBy) {
         try {
             List<Product> list = new ArrayList<>();
@@ -117,7 +115,7 @@ public class DB {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Product p = new Product(rs.getInt("id"), rs.getString("category_id"), rs.getString("name"),
-                        rs.getDouble("price"), rs.getDouble("actual_price"), rs.getString("info"), rs.getString("img_path"));
+                        rs.getDouble("price"), rs.getDouble("actual_price"), rs.getString("info"), rs.getString("img_path"), rs.getString("info_id"));
                 list.add(p);
             }
             return list;
@@ -151,6 +149,33 @@ public class DB {
             return null;
         }
     }
+    
+    
+    public ArrayList<Product> getAllProductByInfoId(String infoId, String sortBy) {
+        ArrayList<Product> list = new ArrayList();
+        String sql;
+
+        try {
+            if (sortBy == null) {
+                sql = "select * from products where info_id = ?";
+            } else {
+                sql = "select * from products where info_id = ? order by actual_price" + sortBy;
+            }
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, infoId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Product p = new Product(rs.getInt("id"), rs.getString("category_id"), rs.getString("name"),
+                        rs.getDouble("price"), rs.getDouble("actual_price"), rs.getString("info"), rs.getString("img_path"));
+                list.add(p);
+            }
+            return list;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return null;
+        }
+    }
+    
 
     public List<Product> getSelectedProducts() {
         try {

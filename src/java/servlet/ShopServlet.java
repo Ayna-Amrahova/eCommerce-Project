@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import model.Product;
 import model.ProductCategory;
+import model.ProductInfo;
 
 @WebServlet(urlPatterns = {"/ShopServlet"})
 
@@ -27,17 +28,26 @@ public class ShopServlet extends HttpServlet {
 
         String sortBy = request.getParameter("sortBy");
         String categoryId = request.getParameter("categoryId");
+        String infoId = request.getParameter("infoId");
         List<ProductCategory> category = db.getProductCategories();
-        List<Product> products;
+        List<ProductInfo> info = db.getProductInfos();
+        List<Product> products = null;
 
-        if (categoryId == null) {
+        if (categoryId == null && infoId == null) {
             products = db.getProducts(sortBy);
-        } else {
+        } else if (categoryId != null && infoId == null) {
             products = db.getAllProductByCategoryId(categoryId, sortBy);
+        } else if (categoryId == null && infoId != null) {
+            products = db.getAllProductByInfoId(infoId, sortBy);
         }
 
         request.setAttribute("products", products);
         request.setAttribute("category", category);
+        request.setAttribute("info", info);
+
+        request.setAttribute("products", products);
+        request.setAttribute("category", category);
+        request.setAttribute("info", info);
         RequestDispatcher dispatcher = request.getRequestDispatcher("shop.jsp");
 
         if (dispatcher != null) {
