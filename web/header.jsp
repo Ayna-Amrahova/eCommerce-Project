@@ -63,7 +63,7 @@
                                     class="cancelbtn" >Cancel</button>
                             <button type="button" onclick="openPage('http://localhost:8080/MatrixProject/RegisterServlet')"
                                     class="cancelbtn">Register</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
+                            <span class="psw"><a href="#">Forgot password?</a></span>
                         </div>
                     </form>
                 </div>

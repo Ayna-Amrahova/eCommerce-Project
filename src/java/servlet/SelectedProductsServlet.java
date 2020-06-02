@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import model.Product;
 
-@WebServlet(urlPatterns = {"/SecondServlet"})
+@WebServlet(urlPatterns = {"/SelectedProductsServlet"})
 
 public class SelectedProductsServlet extends HttpServlet {
 
