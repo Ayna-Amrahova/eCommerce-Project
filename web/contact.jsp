@@ -54,7 +54,7 @@
     </div>
 
     <div class="col-md-6" id="inputs">
-        <form action="/MatrixProject/ContactServlet" method="get">
+        <form action="/MatrixProject/ContactServlet" method="post">
             <input type="text" name="name" id="input1" placeholder="Name" required 
                    data-aos="zoom-out-left"
                    data-aos-duration="1500">

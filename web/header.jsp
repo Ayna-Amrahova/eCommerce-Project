@@ -35,9 +35,9 @@
                 <p id="nav5" onclick="openPage('http://localhost:8080/MatrixProject/ContactServlet')"> CONTACT</p>
                 <img src="./img/basket.png" alt="basket" id="basket" onclick="openPage('http://localhost:8080/MatrixProject/SelectedProductsServlet')">
 
-                <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;" id="login">Login</button>
+                <button onclick="openPage('http://localhost:7080/product/showFormForAllProduct')" style="width:auto;" id="login">Login</button>
 
-                <div id="id01" class="modal">
+<!--                <div id="id01" class="modal">
 
                     <form class="modal-content animate" action="/HomeServlet" method="post">
                         <div class="imgcontainer">
@@ -66,9 +66,9 @@
                             <span class="psw"><a href="#">Forgot password?</a></span>
                         </div>
                     </form>
-                </div>
+                </div>-->
 
-                <script>
+<!--                <script>
                     // Get the modal
                     var modal = document.getElementById('id01');
 
@@ -78,7 +78,7 @@
                             modal.style.display = "none";
                         }
                     }
-                </script>
+                </script>-->
 
                 <script type="text/javascript">
                     function openPage(pageURL)

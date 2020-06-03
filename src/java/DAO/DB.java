@@ -201,6 +201,7 @@ public class DB {
             ps.setString(2, name);
             ps.setDouble(3, actualPrice);
             ps.execute();
+            System.out.println("sdfghjkldsfghjksdfbnm,");
             return true;
         } catch (Exception ex) {
             System.out.println(ex.toString());

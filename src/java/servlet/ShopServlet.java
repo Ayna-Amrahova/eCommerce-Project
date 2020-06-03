@@ -77,11 +77,9 @@ public class ShopServlet extends HttpServlet {
         String prod_price = request.getParameter("productPrice");
         String prod_img = request.getParameter("productImage");
         double actualPrice = Double.valueOf(prod_price);
-        System.out.println(prod_name + "  ///  " + prod_price);
-        System.out.println(prod_name + "  ///  " + prod_price + " ///  " + prod_img);
         if (prod_name != null && prod_price != null && prod_img != null) {
             try {
-                System.out.println(prod_name + "  ///  " + prod_price + " ///  " + prod_img);
+                System.out.println(prod_name + "  ///  " + actualPrice + " ///  " + prod_img);
                 db.saveProducts(prod_img, prod_name, actualPrice);
             } catch (Exception ex) {
                 Logger.getLogger(ShopServlet.class.getName()).log(Level.SEVERE, null, ex);

@@ -123,7 +123,7 @@ crossorigin="anonymous"></script>
 
                                 <input  type="hidden" placeholder="Image" id="productImage" name="productImage" required/> 
 
-                                <button type="submit" id="addProduct">Add Product</button>
+                                <button id="addProduct">Add Product</button>
 
                             </div>
 
@@ -156,7 +156,7 @@ crossorigin="anonymous"></script>
                     data.name = name;
                     data.price = price;
                     data.img = img;
-
+                    alert(img);
                     $.ajax(
                             {
                                 "url": "/ShopServlet",
