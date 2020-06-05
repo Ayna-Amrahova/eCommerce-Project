@@ -554,16 +554,17 @@
 }
 
 #info1{
-    height: 25px;
-    width: 70px;
+    height: 35px;
+    width: 90px;
     margin-top: 80px;
+    padding-top: 7px;
     background-color: #e74350;
     color: white;
     text-align: center;
     font-weight: bold;
     font-size: 13px;
     font-family: sans-serif;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 #row5{

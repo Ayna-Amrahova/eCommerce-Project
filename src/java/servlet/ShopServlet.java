@@ -15,6 +15,8 @@ import javax.servlet.http.*;
 import model.Product;
 import model.ProductCategory;
 import model.ProductInfo;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 @WebServlet(urlPatterns = {"/ShopServlet"})
 
@@ -45,9 +47,6 @@ public class ShopServlet extends HttpServlet {
         request.setAttribute("category", category);
         request.setAttribute("info", info);
 
-        request.setAttribute("products", products);
-        request.setAttribute("category", category);
-        request.setAttribute("info", info);
         RequestDispatcher dispatcher = request.getRequestDispatcher("shop.jsp");
 
         if (dispatcher != null) {
@@ -72,18 +71,21 @@ public class ShopServlet extends HttpServlet {
             throws ServletException, IOException {
 
         response.setContentType("application/json");
-        response.setCharacterEncoding("utf-8");
-        String prod_name = request.getParameter("productName");
-        String prod_price = request.getParameter("productPrice");
-        String prod_img = request.getParameter("productImage");
+
+        String prod_name = request.getParameter("ad");
+        String prod_price = request.getParameter("qiymet");
+        String prod_img = request.getParameter("shekil");
         double actualPrice = Double.valueOf(prod_price);
+
         if (prod_name != null && prod_price != null && prod_img != null) {
             try {
-                System.out.println(prod_name + "  ///  " + actualPrice + " ///  " + prod_img);
                 db.saveProducts(prod_img, prod_name, actualPrice);
+                response.getWriter().write("{\"inserted\": true}");
             } catch (Exception ex) {
                 Logger.getLogger(ShopServlet.class.getName()).log(Level.SEVERE, null, ex);
+                response.getWriter().write("{\"inserted\": false}");
             }
         }
+
     }
 }

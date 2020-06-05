@@ -26,20 +26,6 @@ public class RegisterServlet extends HttpServlet {
         if (dispatcher != null) {
             dispatcher.forward(request, response);
         }
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        System.out.println(username + "  ///  " + password);
-        DB db = new DB();
-        if (request.getParameter("username") != null && request.getParameter("password") != null) {
-            if (!(request.getParameter("username").equals("")) && !(request.getParameter("password").equals(""))) {
-                try {
-                    db.saveUser(username, password);
-                } catch (NoSuchAlgorithmException ex) {
-                    Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        db.checkLogin(username, password);
 
     }
 
@@ -52,18 +38,6 @@ public class RegisterServlet extends HttpServlet {
 
         PrintWriter pw = response.getWriter();
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        DB db = new DB();
-        if (request.getParameter("username") != null && request.getParameter("password") != null) {
-            if (!(request.getParameter("username").equals("")) && !(request.getParameter("password").equals(""))) {
-                try {
-                    db.saveUser(username, password);
-                } catch (NoSuchAlgorithmException ex) {
-                    Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        db.checkLogin(username, password);
+
     }
 }

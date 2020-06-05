@@ -35,11 +35,20 @@ public class ContactServlet extends HttpServlet {
             dispatcher.forward(request, response);
         }
 
-        String name = request.getParameter("name");
-        String toEmail = request.getParameter("email");
-        String subject = request.getParameter("subject");
-        String message = request.getParameter("message");
-        System.out.println(name + "  //// get ////  " + toEmail + "  ///  " + subject + "  ///  " + message);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("application/json");
+
+        String name = request.getParameter("ad");
+        String email = request.getParameter("mail");
+        String subject = request.getParameter("movzu");
+        String message = request.getParameter("mesaj");
+
+        
         DB db = new DB();
         String msg = request.getParameter("msg");
         if (request.getParameter("msg") != null) {
@@ -52,32 +61,15 @@ public class ContactServlet extends HttpServlet {
             }
         }
 
-        String fromEmail = "emrahova.a00@gmail.com";
-        String username = "emrahova.a00";
-        String password = "16071808";
-
-//        if (request.getParameter("name") != null && request.getParameter("email") != null
-//                && request.getParameter("subject") != null && request.getParameter("message") != null) {
-//            if (!(request.getParameter("name").equals("")) && !(request.getParameter("email").equals(""))
-//                    && !(request.getParameter("subject").equals("")) && !(request.getParameter("message").equals(""))) {
-//                try {
-//                    db.saveContact(name, toEmail, subject, message);
-//                } catch (Exception ex) {
-//                    System.out.println(ex.toString());
-//                }
-//            }
-//        }
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        response.setContentType("application/json");
-        response.setCharacterEncoding("utf-8");
-
-        
+        if (name != null && email != null && subject != null && message != null) {
+            try {
+                db.saveContact(name, email, subject, message);
+                response.getWriter().write("{\"inserted\": true}");
+            } catch (Exception ex) {
+                System.out.println(ex.toString());
+                response.getWriter().write("{\"inserted\": false}");
+            }
+        }
 
     }
 }

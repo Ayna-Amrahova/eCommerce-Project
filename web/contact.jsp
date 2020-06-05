@@ -2,8 +2,7 @@
 <link rel="stylesheet" href="contact.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="contact.js">
-</script>
+<script src="contact.js"></script>
 <%@include file="header.jsp" %>
 
 <div class="container">
@@ -72,6 +71,44 @@
                     data-aos-duration="3000"> Send </button>
         </form>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function (e) {
+                e.preventDefault();
+                var name = $("#input1").val();
+                var email = $("#input2").val();
+                var subject = $("#input3").val();
+                var message = $("#input4").val();
+                var info = {ad: name, mail: email, movzu: subject, mesaj: message};
+                $.ajax(
+                        {
+                            type: "POST",
+                            url: "",
+                            data: info,
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.inserted === false) {
+                                    alert('Error!');
+                                } else {
+                                    $("#input1").val("");
+                                    $("#input2").val("");
+                                    $("#input3").val("");
+                                    $("#input4").val("");
+                                }
+                            },
+                            error: function (data, status, er) {
+                                console.log(data);
+                                console.log("error: " + data + " status: " + status + " er:" + er);
+                            }
+                        }
+                );
+            }
+            );
+        });
+
+
+    </script>
 
     <div class="hr" id="hr2" data-aos="fade-up"
          data-aos-duration="3000">

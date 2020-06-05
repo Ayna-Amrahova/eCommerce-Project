@@ -37,49 +37,6 @@
 
                 <button onclick="openPage('http://localhost:7080/product/showFormForAllProduct')" style="width:auto;" id="login">Login</button>
 
-<!--                <div id="id01" class="modal">
-
-                    <form class="modal-content animate" action="/HomeServlet" method="post">
-                        <div class="imgcontainer">
-                            <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
-                            <img src="./img/user.jpg" alt="Avatar" class="avatar">
-                        </div>
-
-                        <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="username" required>
-
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password" required>
-
-                            <button type="submit" id="login">Login</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
-                        </div>
-
-                        <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" 
-                                    class="cancelbtn" >Cancel</button>
-                            <button type="button" onclick="openPage('http://localhost:8080/MatrixProject/RegisterServlet')"
-                                    class="cancelbtn">Register</button>
-                            <span class="psw"><a href="#">Forgot password?</a></span>
-                        </div>
-                    </form>
-                </div>-->
-
-<!--                <script>
-                    // Get the modal
-                    var modal = document.getElementById('id01');
-
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function (event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
-                </script>-->
-
                 <script type="text/javascript">
                     function openPage(pageURL)
                     {

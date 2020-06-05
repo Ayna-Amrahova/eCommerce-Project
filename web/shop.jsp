@@ -8,7 +8,7 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 
@@ -67,8 +67,8 @@ crossorigin="anonymous"></script>
                 <li id="${info.getId()}"><c:out value="${info.getInfo()}" /></li>
             </ul>
             <script>
-                function shopByInfo(){
-                     $("#${info.getId()}").click(function () {
+                function shopByInfo() {
+                    $("#${info.getId()}").click(function () {
                         var infoId = $(this).attr("id");
                         $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?infoId=' + infoId);
 
@@ -133,6 +133,16 @@ crossorigin="anonymous"></script>
 
             </c:forEach>
             <script>
+
+                var odal = document.getElementById('id1');
+
+                window.onclick = function (event) {
+                    if (event.target === odal) {
+                        odal.style.display = "none";
+                    }
+                };
+
+
                 $(document).ready(function () {
                     $(".img_prod").click(function () {
                         var id = $(this).attr("id");
@@ -145,52 +155,39 @@ crossorigin="anonymous"></script>
                     }
                     );
                 }
-
                 );
 
-                $("#addProduct").click(function ( ) {
+                $("#addProduct").click(function (e) {
+                    e.preventDefault();
                     var name = $("#productName").val();
                     var price = $("#productPrice").val();
                     var img = $("#productImage").val();
-                    var data = {};
-                    data.name = name;
-                    data.price = price;
-                    data.img = img;
-                    alert(img);
+                    var info = {ad: name, qiymet: price, shekil: img};
                     $.ajax(
                             {
-                                "url": "/ShopServlet",
-                                "method": "POST",
-                                "data": data,
-                                "success": function (check) {
-                                    if (!check.success) {
+                                type: "POST",
+                                url: "",
+                                data: info,
+                                dataType: "json",
+                                success: function (data) {
+                                    if (data.inserted === false) {
                                         alert('Error!');
                                     } else {
-                                        alert('Success!');
+                                        $("#productName").val("");
+                                        $("#productPrice").val("");
+                                        $("#prodImg").val("");
+                                        odal.style.display = "none";
                                     }
-                                    $("#productName").val("");
-                                    $("#productPrice").val("");
-                                    $("#prodImg").val("");
-
+                                },
+                                error: function (data, status, er) {
+                                    console.log(data);
+                                    console.log("error: " + data + " status: " + status + " er:" + er);
                                 }
-
                             }
-
                     );
                 }
+                );
 
-
-
-
-                )
-
-                var odal = document.getElementById('id1');
-
-                window.onclick = function (event) {
-                    if (event.target === odal) {
-                        odal.style.display = "none";
-                    }
-                }
             </script>
         </div
     </div>

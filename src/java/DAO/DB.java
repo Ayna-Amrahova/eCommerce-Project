@@ -201,7 +201,6 @@ public class DB {
             ps.setString(2, name);
             ps.setDouble(3, actualPrice);
             ps.execute();
-            System.out.println("sdfghjkldsfghjksdfbnm,");
             return true;
         } catch (Exception ex) {
             System.out.println(ex.toString());
@@ -304,22 +303,6 @@ public class DB {
         }
     }
 
-    public void checkLogin(String username, String password) {
-        try {
-            if (username != null && password != null) {
-                String sql = "select * from user where username='" + username + "' and password='" + password + "'";
-                ps = conn.prepareStatement(sql);
-                rs = ps.executeQuery(sql);
-                if (rs.next()) {
-                    System.out.println("Login succesfull!");
-                } else {
-                    System.out.println("Username or password is invalid!");
-                }
-            }
-        } catch (SQLException ex) {
-            System.out.println("checkLogin: " + ex);
-        }
-    }
 
     public boolean saveContact(String name, String email, String subject, String message) {
         try {

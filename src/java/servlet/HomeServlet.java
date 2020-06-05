@@ -41,20 +41,15 @@ public class HomeServlet extends HttpServlet {
             dispatcher.forward(request, response);
         }
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+    }
 
-        if (request.getParameter("username") != null && request.getParameter("password") != null) {
-            if (!(request.getParameter("username").equals(" ")) && !(request.getParameter("password").equals(" "))) {
-                try {
-                    db.saveUser(username, password);
-                } catch (NoSuchAlgorithmException ex) {
-                    Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        db.checkLogin(username, password);
-
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
+        DB db = new DB();
+        PrintWriter pw = response.getWriter();
         String msg = request.getParameter("msg");
         if (request.getParameter("msg") != null) {
             if (!(request.getParameter("msg").equals(" "))) {
@@ -65,28 +60,6 @@ public class HomeServlet extends HttpServlet {
                 }
             }
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("application/json");
-        response.setCharacterEncoding("utf-8");
-        DB db = new DB();
-        PrintWriter pw = response.getWriter();
-
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        if (request.getParameter("username") != null && request.getParameter("password") != null) {
-            if (!(request.getParameter("username").equals(" ")) && !(request.getParameter("password").equals(" "))) {
-                try {
-                    db.saveUser(username, password);
-                } catch (NoSuchAlgorithmException ex) {
-                    Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-        db.checkLogin(username, password);
 
     }
 }
