@@ -52,16 +52,18 @@ public class BlogServlet extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
         DB db = new DB();
-        
-        
-        
+
         String comment = request.getParameter("comment");
-        System.out.println(comment + "   ///cmn");
+        String blog_id = request.getParameter("blog_comment_id");
+        blog_id = blog_id.replace("comment", "");
+
         if (comment != null) {
             if (!(comment.equals(" "))) {
                 try {
-                    db.saveComment(comment);
+                    response.getWriter().write("{\"inserted\": true}");
+                    db.saveComment(comment, Integer.parseInt(blog_id));
                 } catch (Exception ex) {
+                    response.getWriter().write("{\"inserted\": false}");
                     Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

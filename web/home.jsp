@@ -118,7 +118,7 @@
 
     <button class="open-button" onclick="openForm()">Send your message</button>
     <div class="chat-popup" id="myForm">
-        <form action="" class="form-container">
+        <form action="" class="form-container" method="POST">
             <textarea placeholder="Type message..." name="msg" required></textarea>
             <button type="submit" class="btn">Send</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>

@@ -135,7 +135,7 @@
 }
 
 /* Set a style for the submit/send button */
-.comment-container .bttn {
+#bttn {
     background-color: #350066;
     color: white;
     padding: 16px 20px;
@@ -147,8 +147,15 @@
 }
 
 /* Add a red background color to the cancel button */
-.comment-container .cancel {
+#cancelCom {
     background-color: #e74350;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
 }
 
 
@@ -275,8 +282,8 @@
     background-color: #404040;
     background-repeat: no-repeat;
     background-size: cover;
-/*    margin-left: -200px;
-    margin-right: -100px;*/
+    /*    margin-left: -200px;
+        margin-right: -100px;*/
 }
 
 #pf11{
@@ -654,6 +661,12 @@
     font-family: sans-serif;
 }
 
+.lastComment{
+    color: #350066;
+    padding-top: 10px;
+    font-size: 13px;
+    font-family: sans-serif;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {

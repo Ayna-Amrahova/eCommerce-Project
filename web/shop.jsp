@@ -56,6 +56,11 @@ crossorigin="anonymous"></script>
                             $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet');
                         }
                     });
+
+                    $(".info_id").click(function () {
+                        var infoId = $(this).attr("id");
+                        $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?infoId=' + infoId);
+                    });
                 });
             </script>
         </c:forEach>
@@ -63,28 +68,15 @@ crossorigin="anonymous"></script>
         <p id="shopByInfo">Shop by info: </p>
         <hr>
         <c:forEach items="${info}" var="info">
-            <ul class="infos" onclick="shopByInfo()"> 
-                <li id="${info.getId()}"><c:out value="${info.getInfo()}" /></li>
+            <ul> 
+                <li id="${info.getId()}" class="info_id"><c:out value="${info.getInfo()}" /></li>
             </ul>
-            <script>
-                function shopByInfo() {
-                    $("#${info.getId()}").click(function () {
-                        var infoId = $(this).attr("id");
-                        $(window.location).attr('href', 'http://localhost:8080/MatrixProject/ShopServlet?infoId=' + infoId);
-
-                    });
-                }
-            </script>
         </c:forEach>
     </div>
 
 
-
-
-
     <div class="content" id="">
         <div class="row" >
-
             <c:forEach items="${products}" var="products">
 
                 <div class="col-md-4" id="div1" data-aos="zoom-in-up"
@@ -177,6 +169,7 @@ crossorigin="anonymous"></script>
                                         $("#productPrice").val("");
                                         $("#prodImg").val("");
                                         odal.style.display = "none";
+
                                     }
                                 },
                                 error: function (data, status, er) {

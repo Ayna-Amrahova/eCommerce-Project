@@ -22,20 +22,35 @@
 
                     <h5 id="header${blog.getId()}"> ${blog.getHeader()} </h5>
                     <p id="text${blog.getId()}">${blog.getText()}  </p>
-
+                    <p id="lastComment${blog.getId()}" class="lastComment">${blog.getLastComment()}  </p>
                     <button class="comment" id="comment${blog.getId()}" onclick="openCmn()">${blog.getBtnInfo()}</button>
 
 
                 </div>
             </c:forEach>
             <div class="cmnt" id="form">
-                <form class="comment-container" method="POST">
+                <div class="comment-container">
+                    <!--<form class="comment-container" method="POST">-->
                     <textarea placeholder="Type comment..." name="comment" id="comment" required></textarea>
+                    <input type="hidden" id="hidden_input" name="blog_id" />
                     <button type="submit" id="bttn">Send</button>
-                    <button type="button" class="bttn cancel" onclick="closeCmn()">Close</button>
-                </form>
+                    <button type="button" class="bttn cancel" id="cancelCom" onclick="closeCmn()">Close</button>
+                    <!--</form>-->
+                </div>
+
+
             </div>
             <script>
+
+
+
+                var blog_id;
+                $(".comment").click(
+                        function () {
+                            blog_id = $(this).attr("id");
+                        }
+                );
+
 
                 $(document).ready(
                         function () {
@@ -43,21 +58,24 @@
                             $("#bttn").click(
                                     function () {
                                         var comment = $("#comment").val();
+                                        var blog_comment_id = blog_id;
+                                        $("#hidden_input").val(blog_comment_id); //test
                                         var data = {};
                                         data.comment = comment;
-                                        alert(comment);
+                                        data.blog_comment_id = blog_comment_id;
                                         $.ajax(
                                                 {
-                                                    "url": "/BlogServlet",
+                                                    "url": "",
                                                     "method": "post",
                                                     "data": data,
                                                     "success": function (check) {
-                                                        if (!check.success) {
+                                                        if (!check.inserted) {
                                                             alert('Error!');
                                                         } else {
-                                                            alert('Success!');
+                                                            $("#lastComment" + blog_comment_id.replace("comment", "")).html(comment);
+                                                            $("#comment").val("");
                                                         }
-
+                                                        closeCmn();
                                                     }
 
                                                 }

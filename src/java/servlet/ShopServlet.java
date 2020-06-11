@@ -15,8 +15,6 @@ import javax.servlet.http.*;
 import model.Product;
 import model.ProductCategory;
 import model.ProductInfo;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 @WebServlet(urlPatterns = {"/ShopServlet"})
 

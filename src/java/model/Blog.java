@@ -8,14 +8,16 @@ public class Blog {
     private String text;
     private String btnInfo;
     private String likeImg;
+    private String lastComment;
 
-    public Blog(int id, String imgPath, String header, String text, String btnInfo, String likeImg) {
+    public Blog(int id, String imgPath, String header, String text, String btnInfo, String likeImg, String lastComment) {
         this.id = id;
         this.imgPath = imgPath;
         this.header = header;
         this.text = text;
         this.btnInfo = btnInfo;
         this.likeImg = likeImg;
+        this.lastComment = lastComment;
     }
 
     public int getId() {
@@ -64,6 +66,14 @@ public class Blog {
 
     public void setLikeImg(String likeImg) {
         this.likeImg = likeImg;
+    }
+
+    public String getLastComment() {
+        return lastComment;
+    }
+
+    public void setLastComment(String lastComment) {
+        this.lastComment = lastComment;
     }
 
 }

@@ -334,12 +334,18 @@ public class DB {
     public List<Blog> getBlog() {
         try {
             List<Blog> list = new ArrayList<>();
-            String sql;
-            sql = "select id, img_path, header, text, btn_info, like_img from blog";
-            ps = conn.prepareStatement(sql);
+            String sqlComment;
+            sqlComment = sqlComment = "SELECT b.id ,b.img_path, b.header , b.text, b.btn_info, b.like_img, c.comment from blog b \n" +
+                        "LEFT OUTER join blog_comment c on b.id = c.blog_id \n" +
+                        "where (c.id = (select max(c2.id) from blog_comment c2 where c2.blog_id = c.blog_id)\n" +
+                        "OR C.COMMENT IS NULL)\n" +
+                        ";";
+//            sql = "select id, img_path, header, text, btn_info, like_img from blog";
+            ps = conn.prepareStatement(sqlComment);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Blog blog = new Blog(rs.getInt("id"), rs.getString("img_path"), rs.getString("header"), rs.getString("text"), rs.getString("btn_info"), rs.getString("like_img"));
+                Blog blog = new Blog(rs.getInt("id"), rs.getString("img_path"), rs.getString("header"), 
+                        rs.getString("text"), rs.getString("btn_info"), rs.getString("like_img"), rs.getString("comment"));
                 list.add(blog);
             }
             return list;
@@ -349,10 +355,11 @@ public class DB {
         }
     }
 
-    public boolean saveComment(String comment) {
+    public boolean saveComment(String comment, int blog_id) {
         try {
-            ps = conn.prepareStatement("insert into blog_comment(comment) values (?)");
+            ps = conn.prepareStatement("insert into blog_comment(comment, blog_id) values (?,?)");
             ps.setString(1, comment);
+            ps.setInt(2, blog_id);
             ps.execute();
             return true;
         } catch (Exception ex) {
