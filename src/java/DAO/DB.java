@@ -61,7 +61,7 @@ public class DB {
             return null;
         }
     }
-    
+
     public List<ProductInfo> getProductInfos() {
         try {
             List<ProductInfo> list = new ArrayList<>();
@@ -79,7 +79,6 @@ public class DB {
         }
     }
 
-   
     public List<Product> getProducts(String sortBy) {
         try {
             List<Product> list = new ArrayList<>();
@@ -149,8 +148,7 @@ public class DB {
             return null;
         }
     }
-    
-    
+
     public ArrayList<Product> getAllProductByInfoId(String infoId, String sortBy) {
         ArrayList<Product> list = new ArrayList();
         String sql;
@@ -175,7 +173,6 @@ public class DB {
             return null;
         }
     }
-    
 
     public List<Product> getSelectedProducts() {
         try {
@@ -303,7 +300,6 @@ public class DB {
         }
     }
 
-
     public boolean saveContact(String name, String email, String subject, String message) {
         try {
             ps = conn.prepareStatement("insert into contact(name, email, subject, message) values (?, ?, ?, ?)");
@@ -335,16 +331,16 @@ public class DB {
         try {
             List<Blog> list = new ArrayList<>();
             String sqlComment;
-            sqlComment = sqlComment = "SELECT b.id ,b.img_path, b.header , b.text, b.btn_info, b.like_img, c.comment from blog b \n" +
-                        "LEFT OUTER join blog_comment c on b.id = c.blog_id \n" +
-                        "where (c.id = (select max(c2.id) from blog_comment c2 where c2.blog_id = c.blog_id)\n" +
-                        "OR C.COMMENT IS NULL)\n" +
-                        ";";
-//            sql = "select id, img_path, header, text, btn_info, like_img from blog";
+            sqlComment = "SELECT b.id ,b.img_path, b.header , b.text, b.btn_info, b.like_img, c.comment from blog b \n"
+                    + "LEFT OUTER join blog_comment c on b.id = c.blog_id \n"
+                    + "where (c.id = (select max(c2.id) from blog_comment c2 where c2.blog_id = c.blog_id)\n"
+                    + "OR C.COMMENT IS NULL)\n"
+                    + ";";
+
             ps = conn.prepareStatement(sqlComment);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Blog blog = new Blog(rs.getInt("id"), rs.getString("img_path"), rs.getString("header"), 
+                Blog blog = new Blog(rs.getInt("id"), rs.getString("img_path"), rs.getString("header"),
                         rs.getString("text"), rs.getString("btn_info"), rs.getString("like_img"), rs.getString("comment"));
                 list.add(blog);
             }

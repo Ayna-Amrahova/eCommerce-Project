@@ -570,6 +570,14 @@
     font-weight: bold;
 }
 
+#cmn{
+    color: #350066;
+    /*padding-left: 200px;*/
+    padding-top: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
 #text1{
     color: #c0a5b9;
     /*padding-left: 200px;*/

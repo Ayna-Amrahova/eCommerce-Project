@@ -22,6 +22,8 @@
 
                     <h5 id="header${blog.getId()}"> ${blog.getHeader()} </h5>
                     <p id="text${blog.getId()}">${blog.getText()}  </p>
+                    <hr>
+                    <p id="cmn">Comments:</p>
                     <p id="lastComment${blog.getId()}" class="lastComment">${blog.getLastComment()}  </p>
                     <button class="comment" id="comment${blog.getId()}" onclick="openCmn()">${blog.getBtnInfo()}</button>
 
